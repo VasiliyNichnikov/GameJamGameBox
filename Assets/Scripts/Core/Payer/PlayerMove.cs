@@ -40,7 +40,7 @@ namespace Core.Payer
 
         private float GetCurrentSpeed()
         {
-            return Input.GetKey(KeyCode.LeftShift) ? _moveSpeed : _runSpeed;
+            return Input.GetKey(KeyCode.LeftShift) ? _runSpeed : _moveSpeed;
         }
     }
 }
