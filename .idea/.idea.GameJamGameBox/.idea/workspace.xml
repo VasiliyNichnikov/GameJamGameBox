@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eec05cd2-1372-4524-b5c3-58b40865c64d" name="Changes" comment="Переименовал сцену">
-      <change beforePath="$PROJECT_DIR$/Assets/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Payer/PlayerMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Payer/PlayerMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+    <list default="true" id="eec05cd2-1372-4524-b5c3-58b40865c64d" name="Changes" comment="Добавлена работа камеры + внесены правки в скрипт движения игрока">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJamGameBox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJamGameBox/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682789866482</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добавлена работа камеры + внесены правки в скрипт движения игрока">
+      <created>1682799172601</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682799172601</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +215,7 @@
     <MESSAGE value="Добавлена тестовая инициаилизация инвентаря" />
     <MESSAGE value="Инициализация git в IDE" />
     <MESSAGE value="Переименовал сцену" />
-    <option name="LAST_COMMIT_MESSAGE" value="Переименовал сцену" />
+    <MESSAGE value="Добавлена работа камеры + внесены правки в скрипт движения игрока" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена работа камеры + внесены правки в скрипт движения игрока" />
   </component>
 </project>
