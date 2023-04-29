@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float Speed = 7;
+    public float MoveSpeed;
+    private float _corentSpeed;
     private float _x_Move;
     private float _z_Move;
     private CharacterController _player;
@@ -29,7 +30,17 @@ public class PlayerMove : MonoBehaviour
             _move_Derection = new Vector3(_x_Move, 0f,_z_Move);
             _move_Derection = transform.TransformDirection(_move_Derection);
         }
+
         _move_Derection.y = -1;
-        _player.Move(_move_Derection * Speed * Time.deltaTime);
+
+        if ( Input.GetKey(KeyCode.LeftShift))
+        {
+            _corentSpeed = MoveSpeed * 2;
+        }
+        else
+        {
+            _corentSpeed = MoveSpeed;
+        }
+        _player.Move(_move_Derection * _corentSpeed * Time.deltaTime);
     }
 }
