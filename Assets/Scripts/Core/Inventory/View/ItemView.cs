@@ -13,7 +13,7 @@ namespace Core.Inventory.View
 
         public ItemViewType Type => ItemViewType.Default;
 
-        public void Init(IItemData itemData)
+        public void Init(ItemData itemData)
         {
             _title.text = itemData.Title;
             _desciption.text = itemData.Description;

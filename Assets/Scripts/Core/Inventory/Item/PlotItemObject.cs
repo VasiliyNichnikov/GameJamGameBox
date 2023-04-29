@@ -5,9 +5,5 @@
     /// </summary>
     public abstract class PlotItemObject : ItemObjectBase
     {
-        public override void ToTake()
-        {
-            
-        }
     }
 }

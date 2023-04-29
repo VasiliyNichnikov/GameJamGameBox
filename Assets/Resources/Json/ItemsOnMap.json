@@ -1,0 +1,21 @@
+﻿{
+  "Items": [
+    {
+      "Type": "Flashlight",
+      "Title": "Фонарь",
+      "Description": "Я твой фонарь!",
+      "NameIcon": "flashlightIcon",
+      "Position": [0.47, 0.92, 7.0],
+      "Rotation": [0, 0, 0]
+    },
+    {
+      "Type": "Key",
+      "Title": "Ключ от двери",
+      "Description": "Найди дверь сам)!",
+      "NameIcon": "keyIcon",
+      "Position": [-3.2, 0.5, 0],
+      "Rotation": [0, 0, 0]
+    }
+  ],
+  "Types": ["Flashlight", "Key"] 
+}

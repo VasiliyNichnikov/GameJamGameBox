@@ -14,7 +14,7 @@ namespace Core.Inventory.View
             _pool = new ItemViewPool();
         }
         
-        public void Refresh(ReadOnlyCollection<IItemData> data)
+        public void Refresh(ReadOnlyCollection<ItemData> data)
         {
             _pool.HideAll();
             foreach (var item in data)

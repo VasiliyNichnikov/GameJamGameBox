@@ -1,15 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Core.Inventory.Data;
-using Core.Inventory.Item;
 using UnityEngine;
 
 namespace Core.Inventory
 {
     public class PlayerStorage
     {
-        private readonly List<IItemData> _items = new List<IItemData>();
+        public ReadOnlyCollection<ItemData> Items => _items.AsReadOnly();
 
-        public void AddItem(IItemData data)
+        private readonly List<ItemData> _items = new List<ItemData>();
+
+        public void AddItem(ItemData data)
         {
             if (_items.Contains(data))
             {
@@ -20,7 +22,7 @@ namespace Core.Inventory
             _items.Add(data);
         }
 
-        public void RemoveItem(IItemData data)
+        public void RemoveItem(ItemData data)
         {
             if (!_items.Contains(data))
             {
