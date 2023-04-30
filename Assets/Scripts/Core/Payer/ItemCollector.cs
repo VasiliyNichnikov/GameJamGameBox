@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Core.Inventory.Item;
 using UnityEngine;
 
