@@ -6,44 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="eec05cd2-1372-4524-b5c3-58b40865c64d" name="Changes" comment="Добавлена логика сюжетного повествования (Триггеры пока отключены)">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJamGameBox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJamGameBox/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ObjectRotationScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ObjectRotationScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Inventory/UI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Inventory/UI/HintCollector.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Inventory/UI/HintCollector.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Inventory/UI/InventoryView.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Inventory/UI/InventoryView.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Inventory/UI/ItemView.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Inventory/UI/ItemView.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Quests/UI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Quests/UI/MessagePersonView.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Quests/UI/MessagePersonView.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/InteractionWithItem.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/InteractionWithItem/View.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/InteractionWithItem/View/HintCollectorView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/UI/HintCollectorView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/InteractionWithItem/View/HintCollectorView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/UI/HintCollectorView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/InventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/InventoryManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/ItemFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/ItemFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/ItemStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/ItemStorage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/View.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/View/InventoryView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/UI/Inventory/InventoryView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/View/InventoryView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/UI/Inventory/InventoryView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/View/ItemView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/UI/Inventory/ItemView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/View/ItemView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/UI/Inventory/ItemView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/View/ItemViewType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/UI/ItemViewType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/View/ItemViewType.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/UI/ItemViewType.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/LoaderGameScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/LoaderGameSceneAndUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/LoaderGameScene.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/LoaderGameSceneAndUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Main.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/PlotLogic/PlotAction/PlotTextDialogDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PlotLogic/PlotAction/PlotTextDialogDisplay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Pool/ItemViewPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Pool/ItemViewPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Quests/InteractionObjectBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Quests/InteractionObjectBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Quests/RotationObjectsQuest/RotationObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Quests/RotationObjectsQuest/RotationObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Quests/RotationObjectsQuest/RotationObjectsQuestManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Quests/RotationObjectsQuest/RotationObjectsQuestManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Quests/UI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Quests/UI/MessagePersonView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/UI/Quests/MessagePersonView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Quests/UI/MessagePersonView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/UI/Quests/MessagePersonView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Loaders/Data/Ready/ItemData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Loaders/Data/Ready/ItemData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Loaders/StaticLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Loaders/StaticLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Json/ItemsOnMap.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Json/ItemsOnMap.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Camera.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/SkyandFogSettingsProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/SkyandFogSettingsProfile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,9 +52,18 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f712b1dc50b4468388b9c5f95d0d0eaf159e00/ff/a58014c0/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc247226ba714da2a98ada10c55203c4fe00/1f/69fe23d8/AudioSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/ObjectRotationScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Scripts/Core/Game.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Scripts/Core/Game.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Resources/Prefabs/Camera.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Inventory/Item/Flashlight/FlashlightItemObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Scripts/Core/Main.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Scripts/Core/Quests/IQuest.cs" root0="SKIP_HIGHLIGHTING" />
@@ -120,19 +96,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;plot-logic&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Models",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   },
   &quot;keyToStringList&quot;: {
     &quot;rider.external.source.directories&quot;: [
