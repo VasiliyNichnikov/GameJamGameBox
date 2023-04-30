@@ -9,11 +9,7 @@ namespace Loaders
     {
         public static T LoadData<T>(string nameFile)
         {
-#if UNITY_EDITOR
-            return LoadDataFromJson<T>(nameFile);
-#else
             return LoadDataFromResource<T>(nameFile);
-#endif
         }
 
         private static T LoadDataFromResource<T>(string nameResource)
