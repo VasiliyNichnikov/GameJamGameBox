@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Core.Payer
 {
+    [RequireComponent(typeof(CharacterController))]
     public class PlayerMove : MonoBehaviour
     {
         [SerializeField] private float _moveSpeed;

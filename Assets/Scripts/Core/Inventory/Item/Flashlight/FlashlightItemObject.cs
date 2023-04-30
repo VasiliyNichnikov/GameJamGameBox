@@ -1,4 +1,4 @@
-﻿namespace Core.Inventory.Item
+﻿namespace Core.Inventory.Item.Flashlight
 {
     public class FlashlightItemObject : PlotItemObject
     {
