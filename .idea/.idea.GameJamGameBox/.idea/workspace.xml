@@ -6,17 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="eec05cd2-1372-4524-b5c3-58b40865c64d" name="Changes" comment="Вынесена камера в prefab">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameJamGameBox/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameJamGameBox/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/Player.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Player.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Camera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/IInventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/IInventoryManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/InventoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/InventoryManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/Item/FlashlightItemObject.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/Item/FlashlightItemObject.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/Item/FlashlightRotation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory/Item/FlashlightRotation.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Payer/PlayerMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Payer/PlayerMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ObjectRotationScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ObjectRotationScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/InteractionWithItem/View/HintCollectorView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/InteractionWithItem/View/HintCollectorView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Payer/ItemCollector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Payer/ItemCollector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Payer/RotationObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Payer/RotationObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,33 +40,33 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f712b1dc50b4468388b9c5f95d0d0eaf159e00/62/761a63bf/Plane.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f712b1dc50b4468388b9c5f95d0d0eaf159e00/9e/6e3bb860/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f712b1dc50b4468388b9c5f95d0d0eaf159e00/c8/e94eec19/SerializeField.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f712b1dc50b4468388b9c5f95d0d0eaf159e00/fa/a141d74d/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f712b1dc50b4468388b9c5f95d0d0eaf159e00/ff/a58014c0/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Inventory.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Movement.unity.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Movement.unity.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Movement.unity.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Movement.unity.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Resources/Prefabs/Inventory/Items/Flashlight.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Resources/Prefabs/Inventory/UI/InventoryView.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Resources/Prefabs/Camera.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Resources/Prefabs/Camera.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Inventory/Item/Flashlight/FlashlightItemObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Scripts/Core/Inventory/ItemFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/Assets/Scripts/Loaders/StaticLoader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@2.0.3/Editor/PlasticSCM/CloudProjectDownloader/ParseArguments.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/vnich/Documents/Code/Unity/GameJamGameBox/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../TowerDefense/Assets/Scripts/Core/Pool/PoolBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../TowerDefense/Assets/Scripts/Core/Utils/PathUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../TowerDefense/Assets/Scripts/Core/WorkerWithJson/Loader/LevelLoader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../TowerDefense/Assets/Scripts/Loaders/StaticLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -87,7 +83,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "object__rotation",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -234,19 +230,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="HEAD" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>

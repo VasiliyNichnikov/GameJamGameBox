@@ -1,5 +1,6 @@
 ﻿using Core.Inventory.Item;
 using Core.Payer;
+using Core.Quests;
 using UnityEngine;
 
 namespace Core.InteractionWithItem.View
@@ -18,8 +19,8 @@ namespace Core.InteractionWithItem.View
                 }
             }
         }
-        
-        private ItemObjectBase _selectedItem;
+
+        private ItemCollector.ObjectInTrigger _selectedTrigger;
         private bool _isDisplayed;
 
         private void Start()
@@ -40,20 +41,32 @@ namespace Core.InteractionWithItem.View
                 return;
             }
 
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                _selectedItem.ToTake();
-                IsDisplayed = false;
+                if (!_selectedTrigger.IsItemEmpty())
+                {
+                    _selectedTrigger.Item!.ToTake();
+                    IsDisplayed = false;
+                    return;
+                }
+
+                if (!_selectedTrigger.IsInteractionEmpty())
+                {
+                    _selectedTrigger.InteractionObject!.Input();
+                    IsDisplayed = _selectedTrigger.InteractionObject!.IsDisplayedHintAfterInput;
+                    return;
+                }
             }
         }
 
-        private void ChangeStateHint(ItemObjectBase item)
+        private void ChangeStateHint(ItemCollector.ObjectInTrigger objectOnTrigger)
         {
-            IsDisplayed = item != null;
+            IsDisplayed = !objectOnTrigger.IsEmpty();
+            
             
             if (IsDisplayed)
             {
-                _selectedItem = item;
+                _selectedTrigger = objectOnTrigger;
             }
         }
     }
