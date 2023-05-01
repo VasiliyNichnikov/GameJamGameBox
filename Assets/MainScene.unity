@@ -220,7 +220,7 @@ PrefabInstance:
     - target: {fileID: 458502815728707934, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599,
         type: 3}
       propertyPath: m_Intensity
-      value: 22.28169
+      value: 15.915494
       objectReference: {fileID: 0}
     - target: {fileID: 5291566744342133987, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599,
         type: 3}
@@ -230,12 +230,12 @@ PrefabInstance:
     - target: {fileID: 6359002432195340007, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599,
         type: 3}
       propertyPath: m_Intensity
-      value: 22.28169
+      value: 15.915494
       objectReference: {fileID: 0}
     - target: {fileID: 7933957501403873520, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599,
         type: 3}
       propertyPath: m_Intensity
-      value: 22.28169
+      value: 15.915494
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599, type: 3}
@@ -588,6 +588,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908282988976757042, guid: da10059310f44754696f66e15c5c538a,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 22.281693
       objectReference: {fileID: 0}
     - target: {fileID: 6081034712844210660, guid: da10059310f44754696f66e15c5c538a,
         type: 3}
@@ -965,27 +970,57 @@ PrefabInstance:
     - target: {fileID: 458502815728707934, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599,
         type: 3}
       propertyPath: m_Intensity
-      value: 22.28169
+      value: 21.22066
+      objectReference: {fileID: 0}
+    - target: {fileID: 458502815728707934, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 458502815728707934, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1334435116706095722, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2712277475136023783, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2860219317969220067, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 5291566744342133987, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599,
         type: 3}
       propertyPath: m_Name
       value: Hallway
       objectReference: {fileID: 0}
+    - target: {fileID: 5291566744342133987, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6359002432195340007, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599,
         type: 3}
       propertyPath: m_Intensity
-      value: 22.28169
+      value: 15.915494
       objectReference: {fileID: 0}
     - target: {fileID: 7933957501403873520, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599,
         type: 3}
       propertyPath: m_Intensity
-      value: 22.28169
+      value: 21.22066
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933957501403873520, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 5000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d66dcd5e03d6e4ca3678a9eaa5d599, type: 3}
@@ -1099,6 +1134,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908282988976757042, guid: da10059310f44754696f66e15c5c538a,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 22.281693
       objectReference: {fileID: 0}
     - target: {fileID: 6081034712844210660, guid: da10059310f44754696f66e15c5c538a,
         type: 3}

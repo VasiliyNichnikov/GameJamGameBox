@@ -114,8 +114,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.8018868, g: 0.7823821, b: 0.6014151, a: 1}
-  m_Intensity: 22.28169
-  m_Range: 10
+  m_Intensity: 15.915494
+  m_Range: 8
   m_SpotAngle: 97.89225
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -157,9 +157,9 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 3, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 10}
+  m_ColorTemperature: 5000
+  m_UseColorTemperature: 1
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 8}
   m_UseBoundingSphereOverride: 1
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 210
+  m_Intensity: 150
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 22.00001
@@ -331,8 +331,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.8018868, g: 0.7823821, b: 0.6014151, a: 1}
-  m_Intensity: 22.28169
-  m_Range: 8.9
+  m_Intensity: 15.915494
+  m_Range: 8
   m_SpotAngle: 179
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -374,9 +374,9 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 3, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
+  m_ColorTemperature: 5000
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 8.9}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 8}
   m_UseBoundingSphereOverride: 1
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 210
+  m_Intensity: 150
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 22
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_IESPoint: {fileID: 0}
   m_IESSpot: {fileID: 0}
   m_IncludeForRayTracing: 1
-  m_AreaLightShadowCone: 120
+  m_AreaLightShadowCone: 119
   m_UseScreenSpaceShadows: 0
   m_InteractsWithSky: 1
   m_AngularDiameter: 0.5
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_EvsmBlurPasses: 0
   m_LightlayersMask: 1
   m_LinkShadowLayers: 1
-  m_ShadowNearPlane: 0.1
+  m_ShadowNearPlane: 0.01
   m_BlockerSampleCount: 24
   m_FilterSampleCount: 16
   m_MinFilterSize: 0.1
@@ -547,9 +547,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.8018868, g: 0.7823821, b: 0.6014151, a: 1}
-  m_Intensity: 22.28169
-  m_Range: 8.9
+  m_Color: {r: 0.8962264, g: 0.8285368, b: 0.5707102, a: 1}
+  m_Intensity: 15.915494
+  m_Range: 8
   m_SpotAngle: 179
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -587,13 +587,13 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 3, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
+  m_ColorTemperature: 5000
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 8.9}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 8}
   m_UseBoundingSphereOverride: 1
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 210
+  m_Intensity: 150
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 22
