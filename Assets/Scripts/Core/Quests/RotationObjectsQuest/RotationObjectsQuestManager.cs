@@ -1,35 +1,45 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Loaders.Data.Ready;
 using UnityEngine;
+using Utils;
 
 namespace Core.Quests.RotationObjectsQuest
 {
-    public class RotationObjectsQuestManager : MonoBehaviour, IQuest
+    public class RotationObjectsQuestManager : QuestBase
     {
         [SerializeField] private List<RotationObject> _rotationsObject;
 
-        private void Start()
+        public override QuestType Type => QuestType.RotationObjects;
+
+        public override void Init(QuestManager manager, JsonMessage<QuestData> message)
         {
-            Init();
-        }
-        
-        private void Init()
-        {
-            foreach (var rObject in _rotationsObject)
+            base.Init(manager, message);
+
+            foreach (var rotationObject in _rotationsObject)
             {
-                rObject.Init(PrintState);
+                rotationObject.Init(CheckAfterTurn);
             }
         }
 
-        /// <summary>
-        /// написано для теста
-        /// </summary>
-        private void PrintState()
+        private void CheckAfterTurn()
         {
-            Debug.LogWarning($"IsCompleted: {IsCompletedQuest()}");
+            if (IsCompletedQuest())
+            {
+                Manager.QuestCompleted(Message.Data);
+                CompleteQuest();
+            }
         }
-        
-        public bool IsCompletedQuest()
+
+        private void CompleteQuest()
+        {
+            foreach (var rotationObject in _rotationsObject)
+            {
+                rotationObject.CompleteQuest();
+            }
+        }
+
+        public override bool IsCompletedQuest()
         {
             return _rotationsObject.All(obj => obj.IsRightTurn);
         }

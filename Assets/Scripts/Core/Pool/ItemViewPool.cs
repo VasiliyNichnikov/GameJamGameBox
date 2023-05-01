@@ -1,5 +1,6 @@
 ﻿using System.Linq;
-using Core.Inventory.View;
+using Core.UI;
+using Core.UI.Inventory;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -7,10 +8,18 @@ namespace Core.Pool
 {
     public class ItemViewPool : PoolBase<ItemViewType, ItemView>
     {
-        [CanBeNull]
-        public override ItemView GetOrCreateObject(ItemViewType typeObject)
+
+        private Transform _itemParent;
+        
+        public ItemViewPool(Transform itemParent)
         {
-            var selectedItem = UnusedObjects.FirstOrDefault(item => item.Type == typeObject);
+            _itemParent = itemParent;
+        }
+        
+        [CanBeNull]
+        public override ItemView GetOrCreateObject(ItemViewType soundType)
+        {
+            var selectedItem = UnusedObjects.FirstOrDefault(item => item.Type == soundType);
             if (selectedItem != null)
             {
                 UnusedObjects.Remove(selectedItem);
@@ -20,10 +29,10 @@ namespace Core.Pool
             }
 
 
-            var createdItem = Main.Instance.ItemFactory.CreateItemView(typeObject);
+            var createdItem = Main.Instance.ItemFactory.CreateItemView(soundType, _itemParent);
             if (createdItem == null)
             {
-                Debug.LogError($"ItemObjectPool. Not created item: {typeObject}");
+                Debug.LogError($"ItemObjectPool. Not created item: {soundType}");
                 return null;
             }
 

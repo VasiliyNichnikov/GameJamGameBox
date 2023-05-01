@@ -13,7 +13,7 @@ namespace Core.Pool
         public int AllCount => ObjectsInUseCount + UnusedObjectsCount;
 
 
-        public abstract TPoolObject GetOrCreateObject(TType typeObject);
+        public abstract TPoolObject GetOrCreateObject(TType soundType);
 
         public void HideObject(TPoolObject obj)
         {

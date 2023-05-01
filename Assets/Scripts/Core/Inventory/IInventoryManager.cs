@@ -1,5 +1,5 @@
 ﻿using System;
-using Core.Inventory.Data;
+using Loaders.Data.Ready;
 
 namespace Core.Inventory
 {

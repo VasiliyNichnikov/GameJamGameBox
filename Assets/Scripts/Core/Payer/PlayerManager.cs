@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Core.Inventory;
-using Core.Inventory.Data;
 using Core.Inventory.Item;
+using Loaders.Data.Ready;
 using UnityEngine;
 
 namespace Core.Payer

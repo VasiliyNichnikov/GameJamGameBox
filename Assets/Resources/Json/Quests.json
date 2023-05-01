@@ -1,0 +1,10 @@
+﻿{
+  "Quests": [
+    {
+      "Id": 1,
+      "QuestType": "RotationObjects",
+      "RequiredItems": [],
+      "PlotIdAfterComplete": 1
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 ﻿using Core.Inventory.Item;
-using Core.Inventory.View;
+using Core.UI;
+using Core.UI.Inventory;
 using UnityEngine;
 
 namespace Core.Inventory
@@ -7,14 +8,13 @@ namespace Core.Inventory
     public class ItemFactory : MonoBehaviour
     {
         [SerializeField] private Transform _itemObjectParent;
-        [SerializeField] private RectTransform _itemViewParent;
         private ItemStorage _storage;
 
         public void Init(ItemStorage storage)
         {
             _storage = storage;
         }
-        
+
         public ItemObjectBase CreateItemObject(ItemObjectType type)
         {
             var prefab = _storage.GetPrefabByType(type);
@@ -28,7 +28,7 @@ namespace Core.Inventory
             return createdItem;
         }
 
-        public ItemView CreateItemView(ItemViewType type)
+        public ItemView CreateItemView(ItemViewType type, Transform itemViewParent)
         {
             var prefab = _storage.GetPrefabByType(type);
             if (prefab == null)
@@ -36,8 +36,8 @@ namespace Core.Inventory
                 Debug.LogError($"ItemFactory. Not found item prefab with type: {type}");
                 return null;
             }
-            
-            var createdItem = Instantiate(prefab, _itemViewParent, false);
+
+            var createdItem = Instantiate(prefab, itemViewParent, false);
             return createdItem;
         }
     }

@@ -1,6 +1,6 @@
 ﻿using System;
-using Core.Inventory.Data;
-using Core.Inventory.View;
+using Core.UI.Inventory;
+using Loaders.Data.Ready;
 using UnityEngine;
 
 namespace Core.Inventory
@@ -9,14 +9,13 @@ namespace Core.Inventory
     {
         public event Action<ItemData> OnAddItemInInventory;
         
-        [SerializeField]
         private InventoryView _inventoryView;
-        
         private PlayerStorage _storage;
 
         private void Start()
         {
             _storage = new PlayerStorage();
+            _inventoryView =  Main.Instance.DialogManager.ShowDialog<InventoryView>();
         }
 
         public void AddItemInInventory(ItemData data)

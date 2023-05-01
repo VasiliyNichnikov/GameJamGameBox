@@ -11,8 +11,8 @@ namespace Core.Quests.RotationObjectsQuest
         [SerializeField, Range(1, 100)] private int _numberRotation;
 
         private Quaternion _rightRotation;
-
         private int _numberOfTurns;
+        private Action _onAfterTurnAction;
 
         public bool IsRightTurn => _selectedObject.rotation == _rightRotation;
 
@@ -22,18 +22,24 @@ namespace Core.Quests.RotationObjectsQuest
         }
         
         public override bool IsDisplayedHintAfterInput => true;
+        public override bool IsQuestCompleted { get; protected set; }
 
-        private Action _onRotate;
 
-        // Написано для теста
-        public void Init(Action onRotate)
+        public void Init(Action afterTurnAction)
         {
-            _onRotate = onRotate;
+            _onAfterTurnAction = afterTurnAction;
         }
-
+        
+        
         public override void Input()
         {
             Turn();
+            _onAfterTurnAction?.Invoke();
+        }
+
+        public void CompleteQuest()
+        {
+            IsQuestCompleted = true;
         }
 
         private void Turn()
@@ -41,7 +47,6 @@ namespace Core.Quests.RotationObjectsQuest
             _numberOfTurns++;
             // плохой способ, но другим не смог решить
             _selectedObject.rotation = Quaternion.Euler(_rotateAfterClick * _numberOfTurns);
-            _onRotate?.Invoke();
         }
     }
 }

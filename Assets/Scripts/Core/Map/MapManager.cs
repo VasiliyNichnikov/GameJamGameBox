@@ -1,21 +1,32 @@
-﻿using Core.Inventory;
-using Core.Pool;
+﻿using Core.Pool;
 using Loaders;
 
 namespace Core.Map
 {
-    public class MapManager : IMapManager
+    public class MapManager : ILoader, IMapManager
     {
-        private readonly MapLoader _loader;
         private readonly ItemObjectPool _pool;
 
-        public MapManager(LoaderManager loader)
+        public MapManager()
         {
             _pool = new ItemObjectPool();
-            _loader = new MapLoader(_pool);
-            
-            // Добавляем в загрузчики
-            loader.AddLoader(_loader);
+        }
+
+        public void Load()
+        {
+            CreateItemsOnScene();
+        }
+
+        private void CreateItemsOnScene()
+        {
+            var items = Main.Instance.Data.MapHelper.Items;
+            foreach (var item in items)
+            {
+                var createdItem = _pool.GetOrCreateObject(item.ObjectType);
+                createdItem.transform.position = item.Position;
+                createdItem.transform.rotation = item.Rotation;
+                createdItem.Init(item, () => _pool.HideObject(createdItem));
+            }
         }
     }
 }

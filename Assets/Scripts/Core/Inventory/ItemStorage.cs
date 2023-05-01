@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Core.Inventory.Item;
-using Core.Inventory.View;
+using Core.UI;
+using Core.UI.Inventory;
 using JetBrains.Annotations;
 using UnityEngine;
 

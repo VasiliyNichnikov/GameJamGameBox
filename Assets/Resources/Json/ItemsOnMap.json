@@ -1,6 +1,7 @@
 ﻿{
   "Items": [
     {
+      "Id": 1,
       "Type": "Flashlight",
       "Title": "Фонарь",
       "Description": "Я твой фонарь!",
@@ -9,6 +10,7 @@
       "Rotation": [0, 0, 0]
     },
     {
+      "Id": 2,
       "Type": "Key",
       "Title": "Ключ от двери",
       "Description": "Найди дверь сам)!",

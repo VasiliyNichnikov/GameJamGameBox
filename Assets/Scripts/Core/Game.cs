@@ -1,7 +1,6 @@
 ﻿using Core.Inventory;
-using Core.Map;
 using Core.Payer;
-using Loaders;
+using Core.SoundLogic;
 using UnityEngine;
 
 namespace Core
@@ -14,24 +13,15 @@ namespace Core
         public static Game Instance { get; private set; }
 
         public IInventoryManager InventoryManager => _inventoryManager;
-        public IMapManager MapManager { get; private set; }
+        public IPlayerSound PlayerSound => _playerSound;
 
         [SerializeField] private PlayerManager _playerManager;
         [SerializeField] private InventoryManager _inventoryManager;
-
-        private LoaderManager _loaderManager;
-
+        [SerializeField] private PlayerSound _playerSound;
+        
         private void Awake()
         {
             Instance = this;
-
-            // Инициализация загрузчиков
-            _loaderManager = new LoaderManager();
-            // Добавляем данные в загрузчик
-            MapManager = new MapManager(_loaderManager);
-            // Загружаем данные в игру
-            _loaderManager.StartLoading();
-
             _playerManager.Init(_inventoryManager);
         }
     }

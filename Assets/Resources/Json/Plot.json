@@ -1,0 +1,37 @@
+﻿{
+  "Plot": [
+    {
+      "Id": 1,
+      "Steps": [
+        {
+          "Type": "Sound",
+          "SoundExtension": {
+            "Sound": "demonic-woman-scream"
+          }
+        },
+        {
+          "Type": "Timer",
+          "TimerExtension": {
+            "Timer": 5
+          }
+        },
+        {
+          "Type": "MonsterAction"
+        },
+        {
+          "Type": "TextDialog",
+          "TextDialogExtension": {
+            "NamePerson": "Василий!",
+            "MessagePerson": "Привет! Тебе пизда)"
+          }
+        },
+        {
+          "Type": "Sound",
+          "SoundExtension": {
+            "Sound": "dramatic-hit"
+          }
+        }
+      ]
+    }
+  ]
+}

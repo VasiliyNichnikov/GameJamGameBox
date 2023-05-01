@@ -8,9 +8,9 @@ namespace Core.Pool
     public class ItemObjectPool : PoolBase<ItemObjectType, ItemObjectBase>
     {
         [CanBeNull]
-        public override ItemObjectBase GetOrCreateObject(ItemObjectType objectTypeObject)
+        public override ItemObjectBase GetOrCreateObject(ItemObjectType soundType)
         {
-            var selectedItem = UnusedObjects.FirstOrDefault(item => item.ObjectType == objectTypeObject);
+            var selectedItem = UnusedObjects.FirstOrDefault(item => item.ObjectType == soundType);
             if (selectedItem != null)
             {
                 UnusedObjects.Remove(selectedItem);
@@ -19,10 +19,10 @@ namespace Core.Pool
                 return selectedItem;
             }
 
-            var createdItem = Main.Instance.ItemFactory.CreateItemObject(objectTypeObject);
+            var createdItem = Main.Instance.ItemFactory.CreateItemObject(soundType);
             if (createdItem == null)
             {
-                Debug.LogError($"ItemObjectPool. Not created item: {objectTypeObject}");
+                Debug.LogError($"ItemObjectPool. Not created item: {soundType}");
                 return null;
             }
             UsedObjects.Add(createdItem);

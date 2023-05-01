@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Core.Inventory.Data;
+using Loaders.Data.Ready;
 using UnityEngine;
 
 namespace Core.Inventory
