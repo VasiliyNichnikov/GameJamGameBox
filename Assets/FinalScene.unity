@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 4
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -272,6 +272,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4197629857124162839, guid: 436038ce6e9d040b3b36753b4bdbe891,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4752335876959930418, guid: 436038ce6e9d040b3b36753b4bdbe891,
         type: 3}
       propertyPath: m_IsActive
@@ -291,6 +296,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -4.889
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908178450464898895, guid: 436038ce6e9d040b3b36753b4bdbe891,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.819935
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908178450464898895, guid: 436038ce6e9d040b3b36753b4bdbe891,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.2059445
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908178450464898895, guid: 436038ce6e9d040b3b36753b4bdbe891,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.84
       objectReference: {fileID: 0}
     - target: {fileID: 6919955639647028867, guid: 436038ce6e9d040b3b36753b4bdbe891,
         type: 3}
@@ -315,6 +335,11 @@ PrefabInstance:
     - target: {fileID: 7733613041664400545, guid: 436038ce6e9d040b3b36753b4bdbe891,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931580846166376042, guid: 436038ce6e9d040b3b36753b4bdbe891,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7947706633512045387, guid: 436038ce6e9d040b3b36753b4bdbe891,
