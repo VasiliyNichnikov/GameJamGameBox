@@ -20,7 +20,6 @@ namespace Core.Pool
             {
                 UnusedObjects.Remove(selectedSound);
                 UsedObjects.Add(selectedSound);
-                selectedSound.Show();
                 return selectedSound;
             }
 

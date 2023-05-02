@@ -18,6 +18,8 @@ namespace Core.SoundLogic
         public void PlayEffect(AudioClip clip)
         {
             var sound = _pool.GetOrCreateObject(SoundType.EffectSound);
+            sound.Show();
+            sound.Init(() => _pool.HideObject(sound));
             sound.Play(clip);
         }
     }
