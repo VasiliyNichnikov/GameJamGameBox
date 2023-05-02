@@ -26,6 +26,13 @@
           }
         },
         {
+          "Type": "TextDialog",
+          "TextDialogExtension": {
+            "NamePerson": "Василий!",
+            "MessagePerson": "Это уже второе сообщение от меня)"
+          }
+        },
+        {
           "Type": "Sound",
           "SoundExtension": {
             "Sound": "dramatic-hit"

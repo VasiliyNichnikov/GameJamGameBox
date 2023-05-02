@@ -1,4 +1,5 @@
-﻿using Core.Inventory;
+﻿using Core.InputSystem;
+using Core.Inventory;
 using Core.Map;
 using Core.PlotLogic;
 using Core.Quests;
@@ -27,12 +28,14 @@ namespace Core
         public IQuestManager QuestManager => _questManager;
         public IDialogManager DialogManager => _dialogManager;
         public QuestsStorage QuestsStorage => _questsStorage;
+        public IInputHandler InputHandler => _inputHandler;
 
         [SerializeField] private ItemStorage _itemStoragePrefab;
         [SerializeField] private SpriteStorage _spriteStoragePrefab;
         [SerializeField] private SoundStorage _soundStoragePrefab;
         [SerializeField] private QuestsStorage _questsStorage;
         [SerializeField] private DialogManager _dialogManager;
+        [SerializeField] private InputHandler _inputHandler;
         
         [Space(10)] [SerializeField] private ItemFactory _itemFactory;
         private ItemStorage _itemStorage;

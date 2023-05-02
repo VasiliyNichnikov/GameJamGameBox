@@ -18,6 +18,8 @@ namespace Core.UI
         public T ShowDialog<T>() where T : DialogBase
         {
             var dialog = _pool.GetOrCreateDialog<T>(_parent);
+            dialog.InitHidePool(() => _pool.HideDialog(dialog));
+            dialog.Show();
             return dialog;
         }
 

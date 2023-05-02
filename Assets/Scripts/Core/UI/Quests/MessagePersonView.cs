@@ -10,6 +10,8 @@ namespace Core.UI.Quests
 
         public void Init(string namePerson, string messagePerson)
         {
+            base.Init();
+            
             _namePerson.text = namePerson;
             _messagePerson.text = messagePerson;
         }

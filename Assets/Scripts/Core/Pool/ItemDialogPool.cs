@@ -18,7 +18,6 @@ namespace Core.Pool
             {
                 _unusedDialogs.Remove(selectedDialog);
                 _usedDialogs.Add(selectedDialog);
-                selectedDialog.Show();
                 return selectedDialog as T;
             }
 
@@ -28,7 +27,6 @@ namespace Core.Pool
                 Debug.LogError($"ItemDialogPool. Not created dialog: {typeof(T)}");
                 return null;
             }
-            createdDialog.Show();
             createdDialog.transform.SetParent(parent, false);
             createdDialog.transform.SetAsFirstSibling();
             _usedDialogs.Add(createdDialog);

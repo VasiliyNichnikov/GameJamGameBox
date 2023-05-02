@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &488516446530485977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8602832002121453389}
+  - component: {fileID: 8559661417536813763}
+  m_Layer: 0
+  m_Name: InputHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8602832002121453389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488516446530485977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6249419563286525644}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8559661417536813763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488516446530485977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486b9c1969e94b9ba6a6f67212639a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6026123249278071112
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,7 +88,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02f155cc2ff4015981971fda4b14487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventoryView: {fileID: 0}
 --- !u!1 &6249419562821526922
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +133,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemObjectParent: {fileID: 0}
-  _itemViewParent: {fileID: 0}
 --- !u!1 &6249419563286525650
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +166,7 @@ Transform:
   - {fileID: 6249419562821526916}
   - {fileID: 5752362059591800721}
   - {fileID: 3250518648768132205}
+  - {fileID: 8602832002121453389}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -146,6 +189,8 @@ MonoBehaviour:
   _soundStoragePrefab: {fileID: 2763503949909966731, guid: e1d20eca3c10f8f4e9518389ae807f5c,
     type: 3}
   _questsStorage: {fileID: 5877458376149581372}
+  _dialogManager: {fileID: 0}
+  _inputHandler: {fileID: 8559661417536813763}
   _itemFactory: {fileID: 6249419562821526923}
 --- !u!114 &6249419563286525645
 MonoBehaviour:
