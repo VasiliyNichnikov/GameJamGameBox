@@ -8,11 +8,9 @@ public class CharactorController : MonoBehaviour
     [SerializeField] private CharacterController _characterController;
     [SerializeField] private float _moveSpeed = 12f;
     [SerializeField] private float _runSpeed;
+    [SerializeField] private float _gravity = -9.8f;
 
-    void Start()
-    {
-        
-    }
+    Vector3 _velosity;
 
     
     void Update()
@@ -24,6 +22,8 @@ public class CharactorController : MonoBehaviour
 
         var currentSpeed = GetCurrentSpeed();
         _characterController.Move(move * currentSpeed * Time.deltaTime);
+        _velosity.y = _gravity;
+        _characterController.Move(_velosity * Time.deltaTime);
     }
 
     private float GetCurrentSpeed()
