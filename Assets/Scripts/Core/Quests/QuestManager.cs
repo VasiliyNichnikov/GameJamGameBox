@@ -28,7 +28,7 @@ namespace Core.Quests
                 var questOnScene = Main.Instance.QuestsStorage.GetQuestByType(quest.Data.QuestType);
                 if (questOnScene == null)
                 {
-                    Debug.LogError($"Quest on scene not found. Type: {quest.Data.QuestType}");
+                    Debug.LogWarning($"Quest on scene not found. Type: {quest.Data.QuestType}");
                     continue;
                 }
                 questOnScene.Init(this, quest);
