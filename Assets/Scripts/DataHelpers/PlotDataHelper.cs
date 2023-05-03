@@ -60,6 +60,15 @@ namespace DataHelpers
                         allStepsData.Add(jsonMessage);
                         continue;
                     }
+
+                    if (step.OpenDoorExtension != null)
+                    {
+                        var nameDoor = step.OpenDoorExtension.Value.NameDoor;
+                        var nameAnimation = step.OpenDoorExtension.Value.NameAnimation;
+                        var jsonMessage = ExtensionHelper.GetMessageForOpenDoor(stepData, nameDoor, nameAnimation);
+                        allStepsData.Add(jsonMessage);
+                        continue;
+                    }
                 }
 
                 var plotData = new PlotData(plot.Id, allStepsData);

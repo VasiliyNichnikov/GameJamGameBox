@@ -83,7 +83,8 @@
         {
           "Type": "OpenDoor",
           "OpenDoorExtension": {
-            "NameDoor": ""
+            "NameDoor": "Door_AfterCollectedFlashlight",
+            "NameAnimation": "OpenDoor"
           }
         }
       ]

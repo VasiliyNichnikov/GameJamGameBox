@@ -46,4 +46,16 @@ namespace Loaders.Data.Ready
             State = state;
         }
     }
+
+    public struct OpenDoorExtensionData
+    {
+        public readonly string NameDoor;
+        public readonly string NameAnimation;
+
+        public OpenDoorExtensionData(string nameDoor, string nameAnimation)
+        {
+            NameDoor = nameDoor;
+            NameAnimation = nameAnimation;
+        }
+    }
 }

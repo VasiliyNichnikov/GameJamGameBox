@@ -61,6 +61,9 @@ namespace Core.PlotLogic
                     case StepType.ChangeStateObject:
                         action = new PlotChangeStateObject();
                         break;
+                    case StepType.OpenDoor:
+                        action = new PlotOpenDoor();
+                        break;
                 }
 
                 if (action == null)

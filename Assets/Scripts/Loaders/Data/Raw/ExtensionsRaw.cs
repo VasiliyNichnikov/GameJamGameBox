@@ -25,5 +25,6 @@
     public struct OpenDoorExtension
     {
         public string NameDoor { get; set; }
+        public string NameAnimation { get; set; }
     }
 }

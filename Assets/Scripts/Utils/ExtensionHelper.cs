@@ -36,5 +36,13 @@ namespace Utils
             var jsonMessage = new JsonMessage<T>(data, extension);
             return jsonMessage;
         }
+
+        public static JsonMessage<T> GetMessageForOpenDoor<T>(T data, string nameDoor, string nameAnimation)
+            where T : struct
+        {
+            var extension = new OpenDoorExtensionData(nameDoor, nameAnimation);
+            var jsonMessage = new JsonMessage<T>(data, extension);
+            return jsonMessage;
+        }
     }
 }
