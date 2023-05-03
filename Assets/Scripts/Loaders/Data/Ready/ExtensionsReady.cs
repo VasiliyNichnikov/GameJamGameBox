@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Core.Map;
+using UnityEngine;
 
 namespace Loaders.Data.Ready
 {
@@ -31,6 +32,18 @@ namespace Loaders.Data.Ready
         public TimerExtensionData(float time)
         {
             Time = time;
+        }
+    }
+
+    public struct ChangeStateObjectExtensionData
+    {
+        public readonly string ObjectForChanges;
+        public readonly bool State;
+
+        public ChangeStateObjectExtensionData(string objectForChanges, bool state)
+        {
+            ObjectForChanges = objectForChanges;
+            State = state;
         }
     }
 }

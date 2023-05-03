@@ -51,6 +51,42 @@
           }
         }
       ]
+    },
+    {
+      "Id": 3,
+      "Steps": [
+        {
+          "Type": "Sound",
+          "SoundExtension": {
+            "Sound": "wind-gust"
+          }
+        },
+        {
+          "Type": "Timer",
+          "TimerExtension": {
+            "Timer": 3.5
+          }
+        },
+        {
+          "Type": "ChangeStateObject",
+          "ChangeStateObjectExtension": {
+            "NameObject": "Fire_ObjectForChangesState",
+            "State": false
+          }
+        },
+        {
+          "Type": "Sound",
+          "SoundExtension": {
+            "Sound": "door-creaking"
+          }
+        },
+        {
+          "Type": "OpenDoor",
+          "OpenDoorExtension": {
+            "NameDoor": ""
+          }
+        }
+      ]
     }
   ]
 }

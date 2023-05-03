@@ -58,6 +58,9 @@ namespace Core.PlotLogic
                     case StepType.Timer:
                         action = new PlotTimer();
                         break;
+                    case StepType.ChangeStateObject:
+                        action = new PlotChangeStateObject();
+                        break;
                 }
 
                 if (action == null)

@@ -11,6 +11,12 @@
       "QuestType": "CollectingItems",
       "RequiredItems": [3, 4, 5],
       "PlotIdAfterComplete": 2
+    },
+    {
+      "Id": 3,
+      "QuestType": "CollectFlashlight",
+      "RequiredItems": [],
+      "PlotIdAfterComplete": 3
     }
   ]
 }

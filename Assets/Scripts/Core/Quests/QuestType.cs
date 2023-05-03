@@ -3,6 +3,7 @@
     public enum QuestType
     {
         RotationObjects,
-        CollectingItems
+        CollectingItems,
+        CollectFlashlight
     }
 }

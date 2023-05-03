@@ -8,6 +8,8 @@ namespace Loaders.Data.Raw
         public SoundExtension? SoundExtension { get; set; }
         public TextDialogExtension? TextDialogExtension { get; set; }
         public TimerExtension? TimerExtension { get; set; }
+        public ChangeStateObjectExtension? ChangeStateObjectExtension { get; set; }
+        public OpenDoorExtension? OpenDoorExtension { get; set; }
     }
 
     public struct Plot

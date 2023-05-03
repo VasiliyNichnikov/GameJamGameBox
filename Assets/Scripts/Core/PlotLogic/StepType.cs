@@ -5,6 +5,8 @@
         Sound,
         MonsterAction,
         TextDialog,
-        Timer
+        Timer,
+        ChangeStateObject,
+        OpenDoor
     }
 }

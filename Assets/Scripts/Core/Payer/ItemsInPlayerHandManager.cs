@@ -42,11 +42,6 @@ namespace Core.Payer
             // Если предмет добавляется в руку, обновляем рукав
             if (data.AddToHand)
             {
-                if (_selectedItem != null)
-                {
-                    ChangeStateOfSelectedItem(_selectedItem.Value.ObjectType, false);
-                }
-
                 ChangeStateOfSelectedItem(data.ObjectType, true);
             }
             

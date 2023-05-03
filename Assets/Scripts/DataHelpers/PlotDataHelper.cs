@@ -51,6 +51,15 @@ namespace DataHelpers
                         allStepsData.Add(jsonMessage);
                         continue;
                     }
+
+                    if (step.ChangeStateObjectExtension != null)
+                    {
+                        var nameObject = step.ChangeStateObjectExtension.Value.NameObject;
+                        var state = step.ChangeStateObjectExtension.Value.State;
+                        var jsonMessage = ExtensionHelper.GetMessageForChangeStateObject(stepData, nameObject, state);
+                        allStepsData.Add(jsonMessage);
+                        continue;
+                    }
                 }
 
                 var plotData = new PlotData(plot.Id, allStepsData);

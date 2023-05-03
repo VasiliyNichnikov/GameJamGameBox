@@ -15,4 +15,15 @@
     {
         public float Timer { get; set; }
     }
+
+    public struct ChangeStateObjectExtension
+    {
+        public string NameObject { get; set; }
+        public bool State { get; set; }
+    }
+
+    public struct OpenDoorExtension
+    {
+        public string NameDoor { get; set; }
+    }
 }

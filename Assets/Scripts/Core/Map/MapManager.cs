@@ -1,4 +1,5 @@
-﻿using Core.Inventory.Item;
+﻿using System.Linq;
+using Core.Inventory.Item;
 using Core.Pool;
 using Loaders;
 using UnityEngine;
@@ -8,6 +9,7 @@ namespace Core.Map
     public class MapManager : ILoader, IMapManager
     {
         private readonly ItemObjectPool _pool;
+        private ObjectForChangesState[] _objectForChanges;
 
         public MapManager()
         {
@@ -16,9 +18,9 @@ namespace Core.Map
 
         public void Load()
         {
+            _objectForChanges = Object.FindObjectsByType<ObjectForChangesState>(FindObjectsSortMode.None);
             CreateItemsOnScene();
         }
-
 
         void IMapManager.AddItemOnScene(ItemObjectType type, Vector3 position, Quaternion rotation)
         {
@@ -42,6 +44,11 @@ namespace Core.Map
             item.transform.position = position;
             item.transform.rotation = rotation;
             return item;
+        }
+
+        public ObjectForChangesState GetObjectForChanges(string nameObject)
+        {
+            return _objectForChanges?.FirstOrDefault(obj => obj.name == nameObject);
         }
     }
 }
