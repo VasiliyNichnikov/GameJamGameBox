@@ -8,16 +8,16 @@ using UnityEngine;
 
 namespace Core.Payer
 {
-    public class PlayerManager : MonoBehaviour
+    public class ItemsInPlayerHandManager : MonoBehaviour
     {
         [Serializable]
         private struct ItemInHand
         {
             public ItemObjectType ObjectType => _objectType;
-            public GameObject Item => _item;
+            public ItemObjectBase Item => _item;
             
             [SerializeField] private ItemObjectType _objectType;
-            [SerializeField] private GameObject _item;
+            [SerializeField] private ItemObjectBase _item;
         }
 
         [SerializeField]
@@ -67,10 +67,11 @@ namespace Core.Payer
         private void ChangeStateOfSelectedItem(ItemObjectType type, bool state)
         {
             var selectedItem = GetItemByType(type);
-            selectedItem.SetActive(state);
+            selectedItem.AddToHand();
+            selectedItem.gameObject.SetActive(state);
         }
 
-        private GameObject GetItemByType(ItemObjectType type)
+        private ItemObjectBase GetItemByType(ItemObjectType type)
         {
             return _items.FirstOrDefault(item => item.ObjectType == type).Item;
         }

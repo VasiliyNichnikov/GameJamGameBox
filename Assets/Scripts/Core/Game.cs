@@ -2,6 +2,7 @@
 using Core.Payer;
 using Core.SoundLogic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Core
 {
@@ -15,14 +16,14 @@ namespace Core
         public IInventoryManager InventoryManager => _inventoryManager;
         public IPlayerSound PlayerSound => _playerSound;
 
-        [SerializeField] private PlayerManager _playerManager;
+        [SerializeField] private ItemsInPlayerHandManager _itemsInPlayerHandManager;
         [SerializeField] private InventoryManager _inventoryManager;
         [SerializeField] private PlayerSound _playerSound;
         
         private void Awake()
         {
             Instance = this;
-            _playerManager.Init(_inventoryManager);
+            _itemsInPlayerHandManager.Init(_inventoryManager);
         }
     }
 }

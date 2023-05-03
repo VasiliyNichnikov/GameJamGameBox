@@ -610,6 +610,11 @@ PrefabInstance:
       propertyPath: _playerManager
       value: 
       objectReference: {fileID: 1056724173}
+    - target: {fileID: 6249419563286525645, guid: 779a8243cdf7022418e8e63281418ff7,
+        type: 3}
+      propertyPath: _itemsInPlayerHandManager
+      value: 
+      objectReference: {fileID: 1056724173}
     - target: {fileID: 6249419563286525650, guid: 779a8243cdf7022418e8e63281418ff7,
         type: 3}
       propertyPath: m_Name
@@ -987,7 +992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1946743818
 Transform:
   m_ObjectHideFlags: 0
