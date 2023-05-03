@@ -1,5 +1,6 @@
-﻿using Core.Map;
+﻿using Extensions;
 using Loaders;
+using Loaders.Data.Raw;
 using Loaders.Data.Ready;
 
 namespace Utils
@@ -45,9 +46,13 @@ namespace Utils
             return jsonMessage;
         }
 
-        public static JsonMessage<T> GetMessageForQuestSafe<T>(T data, int startValue, int rightAnswer) where T: struct
+        public static JsonMessage<T> GetMessageForQuestSafe<T>(T data, QuestSafeExtension extensionRow) where T: struct
         {
-            var extension = new QuestSafeExtensionData(startValue, rightAnswer);
+            var extension = new QuestSafeExtensionData(extensionRow.StartValue, 
+                extensionRow.RightAnswer, 
+                extensionRow.ItemInside, 
+                extensionRow.ScaleItem.ConvertToVector3(),
+                extensionRow.RotationItem.ConvertToRotation());
             var jsonMessage = new JsonMessage<T>(data, extension);
             return jsonMessage;
         }

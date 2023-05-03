@@ -46,9 +46,7 @@
       "Title": "Туалетная бумага",
       "Description": "Поможет пройти игру!",
       "NameIcon": "toiletPaperIcon",
-      "AddToHand": false,
-      "Position": [-0.36, -0.85, -4.279],
-      "Rotation": [0, 0, 0]
+      "AddToHand": false
     }
   ],
   "Types": ["Flashlight", "Key", "Beer", "Knife", "ToiletPaper"] 

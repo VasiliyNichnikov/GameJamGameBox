@@ -1,4 +1,6 @@
-﻿namespace Loaders.Data.Raw
+﻿using System.Collections.Generic;
+
+namespace Loaders.Data.Raw
 {
     public struct SoundExtension
     {
@@ -32,5 +34,8 @@
     {
         public int StartValue { get; set; }
         public int RightAnswer { get; set; }
+        public int ItemInside { get; set; }
+        public List<float> ScaleItem { get; set; }
+        public List<float> RotationItem { get; set; }
     }
 }

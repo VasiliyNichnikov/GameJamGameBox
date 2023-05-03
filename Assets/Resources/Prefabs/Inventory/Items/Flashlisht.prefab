@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5284715052615266345}
   - component: {fileID: 3558710605310054181}
   - component: {fileID: 5170884158857509}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Flashlisht
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72741a60f0644dab746ae05a32e9146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _light: {fileID: 0}
 --- !u!65 &5170884158857509
 BoxCollider:
   m_ObjectHideFlags: 0

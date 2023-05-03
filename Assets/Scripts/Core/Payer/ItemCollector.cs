@@ -53,6 +53,7 @@ namespace Core.Payer
             }
         }
 
+        [SerializeField] private LayerMask _layer;
         [SerializeField] private float _maxDistance;
         
         /// <summary>
@@ -74,7 +75,7 @@ namespace Core.Payer
         private void Update()
         {
             var fwd = _mainCamera.transform.TransformDirection(Vector3.forward);
-            if (Physics.Raycast(_mainCamera.transform.position, fwd, out var hit, _maxDistance))
+            if (Physics.Raycast(_mainCamera.transform.position, fwd, out var hit, _maxDistance, _layer))
             {
                 var foundObject = hit.collider.gameObject;
 
@@ -88,9 +89,9 @@ namespace Core.Payer
                     TryToDisplayHintCollectorButton<InteractionObjectBase>(foundObject);
                     return;
                 }
-                // ХЗ на сколько страшно
-                OnChangeStateActive?.Invoke(ObjectInTrigger.Empty());
             }
+            // ХЗ на сколько страшно
+            OnChangeStateActive?.Invoke(ObjectInTrigger.Empty());
         }
 
 #if UNITY_EDITOR

@@ -15,8 +15,8 @@ namespace Loaders.Data.Ready
         public readonly string Description;
         public readonly string NameIcon;
         public readonly bool AddToHand;
-        public readonly Vector3 Position;
-        public readonly Quaternion Rotation;
+        public readonly Vector3? Position;
+        public readonly Quaternion? Rotation;
 
         public ItemData(Item rawItem)
         {
@@ -26,9 +26,24 @@ namespace Loaders.Data.Ready
             NameIcon = rawItem.NameIcon;
             AddToHand = rawItem.AddToHand;
             ObjectType = rawItem.Type.ConvertToEnum<ItemObjectType>();
-            Position = rawItem.Position.ConvertToVector3();
-            Rotation = rawItem.Rotation.ConvertToRotation();
             ViewType = ItemViewType.Default;
+            if (rawItem.Position == null)
+            {
+                Position = null;
+            }
+            else
+            {
+                Position = rawItem.Position.ConvertToVector3();
+            }
+
+            if (rawItem.Rotation == null)
+            {
+                Rotation = null;
+            }
+            else
+            {
+                Rotation = rawItem.Rotation.ConvertToRotation();
+            }
         }
     }
 }

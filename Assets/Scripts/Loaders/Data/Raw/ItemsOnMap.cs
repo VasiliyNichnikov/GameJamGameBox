@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 
 namespace Loaders.DataRaw
 {
@@ -12,8 +13,8 @@ namespace Loaders.DataRaw
         public string Description;
         public string NameIcon;
         public bool AddToHand;
-        public List<float> Position;
-        public List<float> Rotation;
+        [CanBeNull] public List<float> Position;
+        [CanBeNull] public List<float> Rotation;
     }
     
     [Serializable]

@@ -1,5 +1,4 @@
-﻿using Core.Map;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Loaders.Data.Ready
 {
@@ -63,11 +62,17 @@ namespace Loaders.Data.Ready
     {
         public readonly int StartValue;
         public readonly int RightAnswer;
+        public readonly int ItemInside;
+        public readonly Vector3 ScaleItem;
+        public readonly Quaternion RotationItem;
 
-        public QuestSafeExtensionData(int startValue, int rightAnswer)
+        public QuestSafeExtensionData(int startValue, int rightAnswer, int itemInside, Vector3 scaleItem, Quaternion rotationItem)
         {
             StartValue = startValue;
             RightAnswer = rightAnswer;
+            ItemInside = itemInside;
+            ScaleItem = scaleItem;
+            RotationItem = rotationItem;
         }
     }
 }

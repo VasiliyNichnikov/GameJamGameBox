@@ -29,9 +29,7 @@ namespace DataHelpers
                 
                 if (item.QuestSafeExtension != null)
                 {
-                    var startValue = item.QuestSafeExtension.Value.StartValue;
-                    var rightAnswer = item.QuestSafeExtension.Value.RightAnswer;
-                    var extension = ExtensionHelper.GetMessageForQuestSafe(quest, startValue, rightAnswer);
+                    var extension = ExtensionHelper.GetMessageForQuestSafe(quest, item.QuestSafeExtension.Value);
                     _quests.Add(extension);
                     continue;
                 }

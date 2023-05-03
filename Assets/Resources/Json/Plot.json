@@ -88,6 +88,18 @@
           }
         }
       ]
+    },
+    {
+      "Id": 4,
+      "Steps": [
+        {
+          "Type": "OpenDoor",
+          "OpenDoorExtension": {
+            "NameDoor": "Safe_QuestItem",
+            "NameAnimation": "OpenSafe"
+          }
+        }
+      ]
     }
   ]
 }

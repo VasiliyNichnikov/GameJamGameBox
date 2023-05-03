@@ -72,7 +72,7 @@ namespace Core
             _loaderGame = new LoaderGameSceneAndUI();
             // Загружаем Json
             Data = new MainData();
-            _mapManager = new MapManager();
+            _mapManager = new MapManager(Data.MapHelper);
             // _triggerManager = new TriggerManager();
             _questManager = new QuestManager();
             // Перемещаемся в ОЗУ

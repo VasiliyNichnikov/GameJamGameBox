@@ -25,7 +25,10 @@
       "PlotIdAfterComplete": 4,
       "QuestSafeExtension": {
         "StartValue": 0,
-        "RightAnswer": 69
+        "RightAnswer": 69,
+        "ItemInside": 5,
+        "ScaleItem": [0.2, 0.2, 0.2],
+        "RotationItem": [0, 0, 0]
       }
     }
   ]
