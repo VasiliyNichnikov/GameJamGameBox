@@ -29,23 +29,12 @@ namespace Core.Payer
         public void Init(IInventoryManager inventoryManager)
         {
             _inventoryManager = inventoryManager;
-            _inventoryManager.OnAddItemInInventory += OnUpdateItemInHand;
+            _inventoryManager.OnAddItemInInventory += UpdateItemInHand;
         }
 
         private void OnDisable()
         {
-            _inventoryManager.OnAddItemInInventory -= OnUpdateItemInHand;
-        }
-
-        private void OnUpdateItemInHand(ItemData data)
-        {
-            // Не будем менять предмет, если в руке и так уже есть предмет
-            if (_selectedItem != null)
-            {
-                return;
-            }
-
-            UpdateItemInHand(data);
+            _inventoryManager.OnAddItemInInventory -= UpdateItemInHand;
         }
 
         private void UpdateItemInHand(ItemData data)

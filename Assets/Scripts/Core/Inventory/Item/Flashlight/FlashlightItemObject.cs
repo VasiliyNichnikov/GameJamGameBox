@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Core.Inventory.Item.Flashlight
 {
@@ -7,6 +8,14 @@ namespace Core.Inventory.Item.Flashlight
         [SerializeField, Header("Плохая реализация. Но Jam). Только для объекта в руке")] private Light _light;
         
         public override ItemObjectType ObjectType => ItemObjectType.Flashlight;
+
+        private void Start()
+        {
+            if (_light != null)
+            {
+                _light.enabled = false;
+            }
+        }
 
         public override void AddToHand()
         {
