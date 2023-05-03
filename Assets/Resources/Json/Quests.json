@@ -17,6 +17,16 @@
       "QuestType": "CollectFlashlight",
       "RequiredItems": [],
       "PlotIdAfterComplete": 3
+    },
+    {
+      "Id": 4,
+      "QuestType": "Safe",
+      "RequiredItems": [],
+      "PlotIdAfterComplete": 4,
+      "QuestSafeExtension": {
+        "StartValue": 0,
+        "RightAnswer": 69
+      }
     }
   ]
 }

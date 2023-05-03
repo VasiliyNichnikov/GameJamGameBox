@@ -27,4 +27,10 @@
         public string NameDoor { get; set; }
         public string NameAnimation { get; set; }
     }
+
+    public struct QuestSafeExtension
+    {
+        public int StartValue { get; set; }
+        public int RightAnswer { get; set; }
+    }
 }

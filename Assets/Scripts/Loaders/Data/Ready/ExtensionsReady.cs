@@ -58,4 +58,16 @@ namespace Loaders.Data.Ready
             NameAnimation = nameAnimation;
         }
     }
+
+    public struct QuestSafeExtensionData
+    {
+        public readonly int StartValue;
+        public readonly int RightAnswer;
+
+        public QuestSafeExtensionData(int startValue, int rightAnswer)
+        {
+            StartValue = startValue;
+            RightAnswer = rightAnswer;
+        }
+    }
 }

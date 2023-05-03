@@ -4,6 +4,7 @@ using Core;
 using Core.Quests;
 using Extensions;
 using Loaders;
+using Loaders.Data.Raw;
 using Loaders.Data.Ready;
 using Loaders.DataRaw;
 using Utils;
@@ -25,6 +26,15 @@ namespace DataHelpers
             {
                 var selectedItems = GetItems(item.RequiredItems);
                 var quest = new QuestData(item.Id, item.QuestType.ConvertToEnum<QuestType>(), item.PlotIdAfterComplete, selectedItems);
+                
+                if (item.QuestSafeExtension != null)
+                {
+                    var startValue = item.QuestSafeExtension.Value.StartValue;
+                    var rightAnswer = item.QuestSafeExtension.Value.RightAnswer;
+                    var extension = ExtensionHelper.GetMessageForQuestSafe(quest, startValue, rightAnswer);
+                    _quests.Add(extension);
+                    continue;
+                }
                 _quests.Add(new JsonMessage<QuestData>(quest, null));
             }
         }

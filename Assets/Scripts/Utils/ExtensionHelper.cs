@@ -44,5 +44,12 @@ namespace Utils
             var jsonMessage = new JsonMessage<T>(data, extension);
             return jsonMessage;
         }
+
+        public static JsonMessage<T> GetMessageForQuestSafe<T>(T data, int startValue, int rightAnswer) where T: struct
+        {
+            var extension = new QuestSafeExtensionData(startValue, rightAnswer);
+            var jsonMessage = new JsonMessage<T>(data, extension);
+            return jsonMessage;
+        }
     }
 }

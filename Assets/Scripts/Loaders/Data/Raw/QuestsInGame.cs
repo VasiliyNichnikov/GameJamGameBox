@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Loaders.DataRaw
+namespace Loaders.Data.Raw
 {
     public struct Quest
     {
@@ -8,6 +8,7 @@ namespace Loaders.DataRaw
         public string QuestType { get; set; }
         public List<int> RequiredItems { get; set; }
         public int PlotIdAfterComplete { get; set; }
+        public QuestSafeExtension? QuestSafeExtension { get; set; }
     }
     
     public struct QuestsInGame

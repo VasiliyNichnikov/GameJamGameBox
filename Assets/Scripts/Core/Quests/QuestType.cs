@@ -4,6 +4,7 @@
     {
         RotationObjects,
         CollectingItems,
-        CollectFlashlight
+        CollectFlashlight,
+        Safe
     }
 }
