@@ -3,6 +3,9 @@
     public enum ItemObjectType
     {
         Key,
-        Flashlight
+        Flashlight,
+        Beer,
+        Knife,
+        ToiletPaper
     }
 }

@@ -65,6 +65,10 @@ namespace Core.UI
             {
                 IsDisplayed = false;
             }
+            else if (!objectOnTrigger.IsItemEmpty() && !objectOnTrigger.Item!.CanTakeItem)
+            {
+                IsDisplayed = false;
+            }
             else
             {
                 IsDisplayed = !objectOnTrigger.IsEmpty();

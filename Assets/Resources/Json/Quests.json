@@ -5,6 +5,12 @@
       "QuestType": "RotationObjects",
       "RequiredItems": [],
       "PlotIdAfterComplete": 1
+    },
+    {
+      "Id": 2,
+      "QuestType": "CollectingItems",
+      "RequiredItems": [3, 4, 5],
+      "PlotIdAfterComplete": 2
     }
   ]
 }

@@ -6,8 +6,9 @@
       "Title": "Фонарь",
       "Description": "Я твой фонарь!",
       "NameIcon": "flashlightIcon",
-      "Position": [-2.43,-0.08,-5.8],
-      "Rotation": [4.26,319.9,86.42]
+      "AddToHand": true,
+      "Position": [-2.43, -0.08, -5.8],
+      "Rotation": [4.26, 319.9, 86.42]
     },
     {
       "Id": 2,
@@ -15,9 +16,40 @@
       "Title": "Ключ от двери",
       "Description": "Найди дверь сам)!",
       "NameIcon": "keyIcon",
+      "AddToHand": false,
       "Position": [-3.2, 0.5, 0],
+      "Rotation": [0, 0, 0]
+    },
+    {
+      "Id": 3,
+      "Type": "Beer",
+      "Title": "Банка пива",
+      "Description": "Хуй знает для чего, но скоро узнаем)",
+      "NameIcon": "beerIcon",
+      "AddToHand": false,
+      "Position": [0.96, -0.85, -4.2],
+      "Rotation": [0, 0, 0]
+    },
+    {
+      "Id": 4,
+      "Type": "Knife",
+      "Title": "Нож",
+      "Description": "Может попробовать монстра заволить им?",
+      "NameIcon": "knifeIcon",
+      "AddToHand": false,
+      "Position": [-0.96, -0.85, -4.27],
+      "Rotation": [0, 0, 0]
+    },
+    {
+      "Id": 5,
+      "Type": "ToiletPaper",
+      "Title": "Туалетная бумага",
+      "Description": "Поможет пройти игру!",
+      "NameIcon": "toiletPaperIcon",
+      "AddToHand": false,
+      "Position": [-0.36, -0.85, -4.279],
       "Rotation": [0, 0, 0]
     }
   ],
-  "Types": ["Flashlight", "Key"] 
+  "Types": ["Flashlight", "Key", "Beer", "Knife", "ToiletPaper"] 
 }

@@ -1,5 +1,7 @@
-﻿using Core.Pool;
+﻿using Core.Inventory.Item;
+using Core.Pool;
 using Loaders;
+using UnityEngine;
 
 namespace Core.Map
 {
@@ -17,16 +19,29 @@ namespace Core.Map
             CreateItemsOnScene();
         }
 
+
+        void IMapManager.AddItemOnScene(ItemObjectType type, Vector3 position, Quaternion rotation)
+        {
+            var createdItem = AddItemOnScene(type, position, rotation);
+            createdItem.InitForQuest();
+        }
+
         private void CreateItemsOnScene()
         {
             var items = Main.Instance.Data.MapHelper.Items;
             foreach (var item in items)
             {
-                var createdItem = _pool.GetOrCreateObject(item.ObjectType);
-                createdItem.transform.position = item.Position;
-                createdItem.transform.rotation = item.Rotation;
+                var createdItem = AddItemOnScene(item.ObjectType, item.Position, item.Rotation);
                 createdItem.Init(item, () => _pool.HideObject(createdItem));
             }
+        }
+
+        private ItemObjectBase AddItemOnScene(ItemObjectType type, Vector3 position, Quaternion rotation)
+        {
+            var item = _pool.GetOrCreateObject(type);
+            item.transform.position = position;
+            item.transform.rotation = rotation;
+            return item;
         }
     }
 }

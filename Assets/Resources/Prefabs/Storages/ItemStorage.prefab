@@ -47,5 +47,8 @@ MonoBehaviour:
   _itemObjects:
   - {fileID: 3558710605310054181, guid: 59f9ad47afdf74c4d827dce816ee848d, type: 3}
   - {fileID: 3810080601553976455, guid: 666fd19869f71394181b2a4fe61dd3bb, type: 3}
+  - {fileID: 5990698590830857615, guid: f5bb102b4d1fa43449ae6932bc8c7b88, type: 3}
+  - {fileID: 7768051454852473158, guid: 354226a87cf3e824abfbba9cd09a0039, type: 3}
+  - {fileID: 667818955578582991, guid: a0b9e9d6872f1274d82e156077c0228f, type: 3}
   _itemViews:
   - {fileID: 6309808120734235550, guid: c19025cfb4f84a24992fcfe39b33e710, type: 3}

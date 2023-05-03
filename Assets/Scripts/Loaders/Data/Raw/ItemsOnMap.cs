@@ -11,6 +11,7 @@ namespace Loaders.DataRaw
         public string Title;
         public string Description;
         public string NameIcon;
+        public bool AddToHand;
         public List<float> Position;
         public List<float> Rotation;
     }

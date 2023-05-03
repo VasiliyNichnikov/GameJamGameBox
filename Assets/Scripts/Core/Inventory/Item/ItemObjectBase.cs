@@ -11,11 +11,18 @@ namespace Core.Inventory.Item
 
         // Не можем инитить в Init, так как ObjectType вызывается на этапе раньше
         public abstract ItemObjectType ObjectType { get; }
+        public bool CanTakeItem { get; private set; }
 
         public void Init(ItemData data, Action onTakeAction)
         {
             Data = data;
             OnTakeAction = onTakeAction;
+            CanTakeItem = true;
+        }
+
+        public void InitForQuest()
+        {
+            CanTakeItem = false;
         }
 
         public void Show()

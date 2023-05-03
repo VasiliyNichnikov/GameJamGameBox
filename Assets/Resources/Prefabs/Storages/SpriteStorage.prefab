@@ -49,3 +49,9 @@ MonoBehaviour:
     _name: keyIcon
   - _sprite: {fileID: 21300000, guid: fbcfe2cc72245bd448d4e2febca70d0b, type: 3}
     _name: flashlightIcon
+  - _sprite: {fileID: 21300000, guid: 2712b1ef0d9e1384c88913fbfed1e370, type: 3}
+    _name: beerIcon
+  - _sprite: {fileID: 21300000, guid: f77d875ace5ebe542b06718c5589a25a, type: 3}
+    _name: knifeIcon
+  - _sprite: {fileID: 21300000, guid: e1cc59d5786d23a4e9498e8ad86ef7a5, type: 3}
+    _name: toiletPaperIcon

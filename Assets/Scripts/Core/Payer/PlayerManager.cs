@@ -50,12 +50,17 @@ namespace Core.Payer
 
         private void UpdateItemInHand(ItemData data)
         {
-            if (_selectedItem != null)
+            // Если предмет добавляется в руку, обновляем рукав
+            if (data.AddToHand)
             {
-                ChangeStateOfSelectedItem(_selectedItem.Value.ObjectType, false);
-            }
+                if (_selectedItem != null)
+                {
+                    ChangeStateOfSelectedItem(_selectedItem.Value.ObjectType, false);
+                }
 
-            ChangeStateOfSelectedItem(data.ObjectType, true);
+                ChangeStateOfSelectedItem(data.ObjectType, true);
+            }
+            
             _selectedItem = data;
         }
 

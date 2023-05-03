@@ -2,6 +2,7 @@
 {
     public enum QuestType
     {
-        RotationObjects
+        RotationObjects,
+        CollectingItems
     }
 }
