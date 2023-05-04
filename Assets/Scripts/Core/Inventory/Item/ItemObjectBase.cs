@@ -1,11 +1,14 @@
 ﻿using System;
+using Core.Pool;
 using Loaders.Data.Ready;
 using UnityEngine;
 
 namespace Core.Inventory.Item
 {
-    public abstract class ItemObjectBase : MonoBehaviour, IDisposable, IItemObject
+    public abstract class ItemObjectBase : MonoBehaviour, IDisposable, IPoolObject
     {
+        public string InfoAboutItem { get; private set; }
+        
         protected ItemData Data;
         protected Action OnTakeAction;
 
@@ -20,6 +23,7 @@ namespace Core.Inventory.Item
             OnTakeAction = onTakeAction;
             CanTakeItem = true;
             HasAnalogInHand = data.AddToHand;
+            InfoAboutItem = Data.Title;
         }
 
         public void InitForQuest()

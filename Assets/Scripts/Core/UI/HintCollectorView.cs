@@ -1,10 +1,14 @@
 ﻿using Core.Payer;
+using Loaders.Data.Ready;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Core.UI
 {
     public class HintCollectorView : DialogBase
     {
+        [SerializeField] private Text _infoAboutAction;
+        
         private bool IsDisplayed
         {
             get => _isDisplayed;
@@ -76,10 +80,22 @@ namespace Core.UI
 
             if (IsDisplayed)
             {
+                UpdateInfoAboutAction(objectOnTrigger);
                 _selectedTrigger = objectOnTrigger;
             }
         }
 
+        private void UpdateInfoAboutAction(ItemCollector.ObjectInTrigger objectOnTrigger)
+        {
+            if (objectOnTrigger.IsItemEmpty())
+            {
+                _infoAboutAction.gameObject.SetActive(false);
+                return;
+            }
+            _infoAboutAction.gameObject.SetActive(true);
+            _infoAboutAction.text = objectOnTrigger.Item!.InfoAboutItem;
+        }
+        
         public override void Dispose()
         {
             // nothing
