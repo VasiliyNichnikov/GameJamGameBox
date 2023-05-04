@@ -77,4 +77,7 @@ crashlytics-build.properties
 # End of https://www.toptal.com/developers/gitignore/api/unity
 # mac
 *.DS_Store
-*.idea
+.idea/
+*.DS_Store
+# Ignore models meta data
+Assets/Resources/ModelsRaw/**/*.meta
