@@ -7,8 +7,8 @@
       "Description": "Я твой фонарь!",
       "NameIcon": "flashlightIcon",
       "AddToHand": true,
-      "Position": [-2.43, -0.08, -5.8],
-      "Rotation": [4.26, 319.9, 86.42]
+      "Position": [4.12, 0.704, -2.48],
+      "Rotation": [0, 180, 0]
     },
     {
       "Id": 2,
