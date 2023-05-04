@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Core.UI;
 using Core.UI.Inventory;
 using JetBrains.Annotations;
@@ -8,14 +9,15 @@ namespace Core.Pool
 {
     public class ItemViewPool : PoolBase<ItemViewType, ItemView>
     {
+        public IList<ItemView> CreatedItems => UsedObjects;
 
-        private Transform _itemParent;
+        private readonly Transform _itemParent;
         
         public ItemViewPool(Transform itemParent)
         {
             _itemParent = itemParent;
         }
-        
+
         [CanBeNull]
         public override ItemView GetOrCreateObject(ItemViewType soundType)
         {

@@ -7,6 +7,8 @@ namespace Core.UI
     {
         [SerializeField]
         private Transform _parent;
+
+        [SerializeField] private RectTransform _holder;
         
         private ItemDialogPool _pool;
 
@@ -17,7 +19,10 @@ namespace Core.UI
         
         public T ShowDialog<T>() where T : DialogBase
         {
-            var dialog = _pool.GetOrCreateDialog<T>(_parent);
+            var holderForDialog = Instantiate(_holder, _parent, false);
+            holderForDialog.name = $"{holderForDialog.name}_holder";
+            
+            var dialog = _pool.GetOrCreateDialog<T>(holderForDialog);
             dialog.InitHidePool(() => _pool.HideDialog(dialog));
             dialog.Show();
             return dialog;

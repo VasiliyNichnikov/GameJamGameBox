@@ -10,6 +10,7 @@ namespace Core.InputSystem
 
         private const KeyCode KeyE = KeyCode.K;
         private const KeyCode KeySpace = KeyCode.Space;
+        private const KeyCode KeyTab = KeyCode.Tab;
 
         private void Update()
         {
@@ -21,6 +22,11 @@ namespace Core.InputSystem
             if (Input.GetKeyDown(KeyE))
             {
                 OnInputKeyboard?.Invoke(KeyE);
+            }
+
+            if (Input.GetKeyDown(KeyTab))
+            {
+                OnInputKeyboard?.Invoke(KeyTab);
             }
 
             if (Input.GetKeyDown(KeySpace))

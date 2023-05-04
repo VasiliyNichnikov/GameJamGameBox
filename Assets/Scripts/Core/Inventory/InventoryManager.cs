@@ -9,6 +9,8 @@ namespace Core.Inventory
 {
     public class InventoryManager : MonoBehaviour, IInventoryManager
     {
+        private const KeyCode TabCode = KeyCode.Tab; 
+        
         public event Action<ItemData> OnAddItemInInventory;
         
         private InventoryView _inventoryView;
@@ -17,9 +19,18 @@ namespace Core.Inventory
         private void Start()
         {
             _storage = new PlayerStorage();
+            
             _inventoryView =  Main.Instance.DialogManager.ShowDialog<InventoryView>();
+            _inventoryView.CloseInventory();
+            Main.Instance.InputHandler.OnInputKeyboard += ChangeStateInventory;
         }
+        
 
+        private void OnDisable()
+        {
+            Main.Instance.InputHandler.OnInputKeyboard -= ChangeStateInventory;
+        }
+        
         public void RemoveItemFromInventory(ItemObjectType type)
         {
             var selectedItem = _storage.Items.FirstOrDefault(item => item.ObjectType == type);
@@ -43,6 +54,23 @@ namespace Core.Inventory
             _storage.AddItem(data);
             _inventoryView.Refresh(_storage.Items);
             OnAddItemInInventory?.Invoke(data);
+        }
+
+        private void ChangeStateInventory(KeyCode code)
+        {
+            if (code != TabCode)
+            {
+                return;
+            }
+            
+            if (_inventoryView.IsOpened)
+            {
+                _inventoryView.CloseInventory();
+            }
+            else
+            {
+                _inventoryView.OpenInventory();
+            }
         }
     }
 }

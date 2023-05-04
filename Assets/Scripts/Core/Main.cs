@@ -89,11 +89,6 @@ namespace Core
             _dialogManager.ShowDialog<HintCollectorView>();
         }
 
-        private void Update()
-        {
-            // _triggerManager.Update();
-        }
-
         private void OnDestroy()
         {
             _plotManager.Dispose();

@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 737117805471536079}
+  _holder: {fileID: 2582660964614674500, guid: f2e9b385354713c49a0ca9a9122c0eb5, type: 3}
 --- !u!1 &6026123249278071112
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86404d09e7ac475c84a755a5a5c9a2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerManager: {fileID: 0}
+  _itemsInPlayerHandManager: {fileID: 0}
   _inventoryManager: {fileID: 478528696111274429}
   _playerSound: {fileID: 0}
 --- !u!1 &7078173451527723721
