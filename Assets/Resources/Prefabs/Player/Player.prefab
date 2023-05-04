@@ -915,6 +915,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundParent: {fileID: 3099331504963201261}
+  _footSteps:
+  - {fileID: 8300000, guid: add09e87866457e40a3c41c4907c4181, type: 3}
+  - {fileID: 8300000, guid: 2a28822ca4aec154795dd27974d753f0, type: 3}
+  - {fileID: 8300000, guid: 01e3f8906ff9f1045b85bf10ec0c72f3, type: 3}
+  - {fileID: 8300000, guid: e0fef969f1006c647a80ecbbe26f6982, type: 3}
+  - {fileID: 8300000, guid: 081474b0a3f3f134cba7596f143f7c7f, type: 3}
+  - {fileID: 8300000, guid: 032ecc2cbf3cac0459a4f2a1fe7b37ba, type: 3}
+  - {fileID: 8300000, guid: b6083d9cf85108b4dab7beb1f3398608, type: 3}
+  - {fileID: 8300000, guid: 32b7b9e1715820146a748300f2395962, type: 3}
+  - {fileID: 8300000, guid: 7ba2a8fbb7cba3c4db89c4933a6eb231, type: 3}
+  - {fileID: 8300000, guid: 4e0b547ceaaa9ac4dab64e3d1c36693e, type: 3}
+  - {fileID: 8300000, guid: 7267974e58ab17147984ed17eaa9d5bb, type: 3}
 --- !u!1 &5257520121735459486
 GameObject:
   m_ObjectHideFlags: 0

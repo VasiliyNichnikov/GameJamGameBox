@@ -2,6 +2,7 @@
 {
     public enum SoundType
     {
-        EffectSound
+        EffectSound,
+        Steps
     }
 }

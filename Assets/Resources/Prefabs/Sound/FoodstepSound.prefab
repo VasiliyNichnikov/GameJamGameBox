@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1513727344741729731}
   - component: {fileID: 2951224228409036967}
   m_Layer: 0
-  m_Name: EffectSound
+  m_Name: FoodstepSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0fe9ffa64c0455a98182f07874e5b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundType: 0
+  _soundType: 1
   _source: {fileID: 2951224228409036967}
 --- !u!82 &2951224228409036967
 AudioSource:
@@ -56,10 +56,10 @@ AudioSource:
   m_GameObject: {fileID: 533932865066120392}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -1740532775737189717, guid: 3b7698a2172ca1d45ae1a12b3fcd6021,
+  OutputAudioMixerGroup: {fileID: 5007626450783441186, guid: 3b7698a2172ca1d45ae1a12b3fcd6021,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

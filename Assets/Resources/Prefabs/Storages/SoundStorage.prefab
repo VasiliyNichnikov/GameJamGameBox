@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundItems:
   - {fileID: 1513727344741729731, guid: 9f8de058514a9fd428785624f9f3762e, type: 3}
+  - {fileID: 1513727344741729731, guid: 4e2a75dc7eaec6f4f92c74b409e2f337, type: 3}

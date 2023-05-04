@@ -6,6 +6,7 @@ namespace Core.InputSystem
     public class InputHandler : MonoBehaviour, IInputHandler
     {
         public event Action<KeyCode> OnInputKeyboard;
+        public event Action OnAnyKey;
         public event Action OnInputMouseButton;
 
         private const KeyCode KeyE = KeyCode.K;
@@ -32,6 +33,11 @@ namespace Core.InputSystem
             if (Input.GetKeyDown(KeySpace))
             {
                 OnInputKeyboard?.Invoke(KeySpace);
+            }
+
+            if (Input.anyKey)
+            {
+                OnAnyKey?.Invoke();
             }
         }
     }
