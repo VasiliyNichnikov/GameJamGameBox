@@ -24,6 +24,9 @@ namespace Core
         {
             Instance = this;
             _itemsInPlayerHandManager.Init(_inventoryManager);
+            
+            // Выключаем курсор
+            Cursor.visible = false;
         }
     }
 }
