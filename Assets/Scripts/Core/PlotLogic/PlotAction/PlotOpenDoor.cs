@@ -21,7 +21,7 @@ namespace Core.PlotLogic.PlotAction
                 Debug.LogError($"Not found door: {ext.Value.NameDoor}");
                 return;
             }
-            objectForChange.PlayAnimation(ext.Value.NameAnimation);
+            objectForChange.OpenDoor();
         }
 
         public override bool IsEventCompleted()

@@ -56,22 +56,9 @@
       "Id": 3,
       "Steps": [
         {
-          "Type": "Sound",
-          "SoundExtension": {
-            "Sound": "wind-gust"
-          }
-        },
-        {
           "Type": "Timer",
           "TimerExtension": {
-            "Timer": 3.5
-          }
-        },
-        {
-          "Type": "ChangeStateObject",
-          "ChangeStateObjectExtension": {
-            "NameObject": "Fire_ObjectForChangesState",
-            "State": false
+            "Timer": 1.5
           }
         },
         {
@@ -86,6 +73,19 @@
             "NameDoor": "Door_AfterCollectedFlashlight",
             "NameAnimation": "OpenDoor"
           }
+        },
+        {
+          "Type": "Sound",
+          "SoundExtension": {
+            "Sound": "dramatic-hit"
+          }
+        },
+        {
+          "Type": "ChangeStateObject",
+          "ChangeStateObjectExtension": {
+            "NameObject": "Lamp_Bedroom_AfterCollectedFlashlight",
+            "State": false
+          }
         }
       ]
     },
@@ -97,6 +97,46 @@
           "OpenDoorExtension": {
             "NameDoor": "Safe_QuestItem",
             "NameAnimation": "OpenSafe"
+          }
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "Steps": [
+        {
+          "Type": "TextDialog",
+          "TextDialogExtension": {
+            "NamePerson": "Василий!",
+            "MessagePerson": "Появление врага!"
+          }
+        },
+        {
+          "Type": "OpenDoor",
+          "OpenDoorExtension": {
+            "NameDoor": "Door_AfterInputFrontDoor_Right",
+            "NameAnimation": "OpenDoor"
+          }
+        },
+        {
+          "Type": "OpenDoor",
+          "OpenDoorExtension": {
+            "NameDoor": "Door_AfterInputFrontDoor_Left",
+            "NameAnimation": "OpenDoor"
+          }
+        },
+        {
+          "Type": "OpenDoor",
+          "OpenDoorExtension": {
+            "NameDoor": "Door_AfterInputFrontDoor_Up",
+            "NameAnimation": "OpenDoor"
+          }
+        },
+        {
+          "Type": "OpenDoor",
+          "OpenDoorExtension": {
+            "NameDoor": "Door_AfterInputFrontDoor_Down",
+            "NameAnimation": "OpenDoor"
           }
         }
       ]

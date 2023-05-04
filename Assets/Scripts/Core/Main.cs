@@ -1,4 +1,5 @@
-﻿using Core.InputSystem;
+﻿using Core.Doors;
+using Core.InputSystem;
 using Core.Inventory;
 using Core.Map;
 using Core.PlotLogic;
@@ -29,6 +30,7 @@ namespace Core
         public IDialogManager DialogManager => _dialogManager;
         public QuestsStorage QuestsStorage => _questsStorage;
         public IInputHandler InputHandler => _inputHandler;
+        public DoorStorage DoorStorage => _doorStorage;
 
         [SerializeField] private ItemStorage _itemStoragePrefab;
         [SerializeField] private SpriteStorage _spriteStoragePrefab;
@@ -36,7 +38,8 @@ namespace Core
         [SerializeField] private QuestsStorage _questsStorage;
         [SerializeField] private DialogManager _dialogManager;
         [SerializeField] private InputHandler _inputHandler;
-        
+        [SerializeField] private DoorStorage _doorStorage;
+
         [Space(10)] [SerializeField] private ItemFactory _itemFactory;
         private ItemStorage _itemStorage;
 
@@ -45,7 +48,7 @@ namespace Core
         private TriggerManager _triggerManager;
         private QuestManager _questManager;
         private PlotManager _plotManager;
-        
+
         public void Awake()
         {
             Instance = this;
@@ -59,7 +62,7 @@ namespace Core
             {
                 SpriteStorage = Instantiate(_spriteStoragePrefab, transform, false);
             }
-            
+
             if (SoundStorage == null)
             {
                 SoundStorage = Instantiate(_soundStoragePrefab, transform, false);
@@ -81,10 +84,10 @@ namespace Core
                 .AddLoader(_questManager)
                 .AddLoader(_mapManager)
                 // .AddLoader(_triggerManager)
-                .StartLoading();
-            
+                .StartLoadingOnAwake();
+
             _plotManager = new PlotManager(_questManager);
-            
+
             // Создание кнопки E
             _dialogManager.ShowDialog<HintCollectorView>();
         }
@@ -92,6 +95,11 @@ namespace Core
         private void OnDestroy()
         {
             _plotManager.Dispose();
+        }
+
+        private void Start()
+        {
+            _loaderGame.StartLoadingOnStart();
         }
     }
 }

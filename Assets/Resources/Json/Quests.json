@@ -30,6 +30,12 @@
         "ScaleItem": [0.2, 0.2, 0.2],
         "RotationItem": [0, 0, 0]
       }
+    },
+    {
+      "Id": 5,
+      "QuestType": "FrontDoor",
+      "RequiredItems": [],
+      "PlotIdAfterComplete": 5
     }
   ]
 }

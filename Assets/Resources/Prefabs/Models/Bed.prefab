@@ -105,6 +105,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfb915a4aca86e448849643bdf916cdd, type: 3}
+--- !u!1 &8273542803998639150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7567852659498995869, guid: dfb915a4aca86e448849643bdf916cdd,
+    type: 3}
+  m_PrefabInstance: {fileID: 2006334657011569843}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6819080263450133060
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8273542803998639150}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019883182, y: 0.011929909, z: 0.00874421}
+  m_Center: {x: -5.9604643e-10, y: -5.5083744e-18, z: 0.0036961508}
 --- !u!4 &8762412733722549908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7083521513506114087, guid: dfb915a4aca86e448849643bdf916cdd,
@@ -253,7 +272,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillow
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7184538307687001710, guid: 29891c1d4a34f224b9f9db98e7a598de, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 29891c1d4a34f224b9f9db98e7a598de, type: 3}
 --- !u!4 &6429232421084533892 stripped
 Transform:
@@ -328,7 +348,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillow
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7184538307687001710, guid: 29891c1d4a34f224b9f9db98e7a598de, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 29891c1d4a34f224b9f9db98e7a598de, type: 3}
 --- !u!4 &43196062890686904 stripped
 Transform:

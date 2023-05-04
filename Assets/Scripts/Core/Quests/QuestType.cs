@@ -5,6 +5,7 @@
         RotationObjects,
         CollectingItems,
         CollectFlashlight,
-        Safe
+        Safe,
+        FrontDoor
     }
 }

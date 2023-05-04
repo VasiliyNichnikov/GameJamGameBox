@@ -1,4 +1,5 @@
-﻿using Core.Pool;
+﻿using System.Collections;
+using Core.Pool;
 using UnityEngine;
 
 namespace Core.SoundLogic
@@ -7,7 +8,12 @@ namespace Core.SoundLogic
     {
         [SerializeField] private Transform _soundParent;
         [SerializeField] private AudioClip[] _footSteps;
-
+        
+        [Space]
+        [SerializeField] private AudioSource[] _ambiencesSource;
+        [SerializeField, Header("За сколько секунд до конца будем менять звуки"), Range(0, 5)] 
+        private float _transitionTime;
+        
         private SoundItem _footStepSound;
         private SoundPool _pool;
 
@@ -16,6 +22,8 @@ namespace Core.SoundLogic
             _pool = new SoundPool(_soundParent);
 
             InitFootSteps();
+
+            StartCoroutine(StartAmbiences());
         }
 
         private void InitFootSteps()
@@ -42,6 +50,28 @@ namespace Core.SoundLogic
 
             var clip = _footSteps[Random.Range(0, _footSteps.Length)];
             _footStepSound.Play(clip);
+        }
+
+        private IEnumerator StartAmbiences()
+        {
+            var currentSoundId = 0;
+            while (true)
+            {
+                var randomId = Random.Range(0, _ambiencesSource.Length);
+                if (randomId == currentSoundId)
+                {
+                    randomId++;
+                }
+
+                if (randomId == _ambiencesSource.Length)
+                {
+                    randomId = 0;
+                }
+
+                currentSoundId = randomId;
+                _ambiencesSource[randomId].Play();
+                yield return new WaitForSeconds(_ambiencesSource[randomId].clip.length - _transitionTime);
+            }
         }
     }
 }

@@ -1,0 +1,12 @@
+﻿{
+  "Doors": [
+    {
+      "Type": "Key",
+      "RoomType": "Kitchen",
+      "DoorKeyExtension": {
+        "NeededItem": 2,
+        "Hint": "Нужен ключ от кухни"
+      }
+    }
+  ]
+}

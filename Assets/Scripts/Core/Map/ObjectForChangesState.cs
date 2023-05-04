@@ -1,19 +1,32 @@
-﻿using UnityEngine;
+﻿using System;
+using Core.Doors;
+using UnityEngine;
 
 namespace Core.Map
 {
     public class ObjectForChangesState : MonoBehaviour
     {
-        [SerializeField] private Animation _animation;
+        [SerializeField] private DoorQuest _door;
+
+        [SerializeField] private string _nameObject;
+
+        private void Start()
+        {
+            name = _nameObject;
+        }
+
 
         public void ChangeState(bool state)
         {
             gameObject.SetActive(state);
         }
 
-        public void PlayAnimation(string nameAnimation)
+        public void OpenDoor()
         {
-            _animation.Play(nameAnimation);
+            if (_door != null)
+            {
+                _door.Open();
+            }
         }
     }
 }

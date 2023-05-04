@@ -7,14 +7,14 @@
       "Description": "Я твой фонарь!",
       "NameIcon": "flashlightIcon",
       "AddToHand": true,
-      "Position": [4.12, 0.704, -2.48],
+      "Position": [1.56, 0.55, -9.65],
       "Rotation": [0, 180, 0]
     },
     {
       "Id": 2,
       "Type": "Key",
-      "Title": "Ключ от двери",
-      "Description": "Найди дверь сам)!",
+      "Title": "Ключ от кухни",
+      "Description": "Дверь где-то в доме!",
       "NameIcon": "keyIcon",
       "AddToHand": false,
       "Position": [-3.2, 0.5, 0],

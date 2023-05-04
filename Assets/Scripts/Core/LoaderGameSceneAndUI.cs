@@ -23,7 +23,7 @@ namespace Core
             return this;
         }
 
-        public void StartLoading()
+        public void StartLoadingOnAwake()
         {
             if (_isLoaded)
             {
@@ -33,10 +33,24 @@ namespace Core
             
             foreach (var loader in _loaders)
             {
-                loader.Load();
+                loader.LoadAwake();
             }
+        }
 
-            _isLoaded = false;
+        public void StartLoadingOnStart()
+        {
+            if (_isLoaded)
+            {
+                Debug.LogWarning("LoaderGameScene. Loaders is completed");
+                return;
+            }
+            
+            foreach (var loader in _loaders)
+            {
+                loader.LoadStart();
+            }
+            
+            _isLoaded = true;
             _loaders.Clear();
         }
     }

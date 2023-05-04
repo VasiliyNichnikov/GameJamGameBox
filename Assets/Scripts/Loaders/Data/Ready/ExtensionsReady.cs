@@ -49,12 +49,10 @@ namespace Loaders.Data.Ready
     public struct OpenDoorExtensionData
     {
         public readonly string NameDoor;
-        public readonly string NameAnimation;
 
         public OpenDoorExtensionData(string nameDoor, string nameAnimation)
         {
             NameDoor = nameDoor;
-            NameAnimation = nameAnimation;
         }
     }
 
@@ -73,6 +71,18 @@ namespace Loaders.Data.Ready
             ItemInside = itemInside;
             ScaleItem = scaleItem;
             RotationItem = rotationItem;
+        }
+    }
+
+    public struct DoorKeyExtensionData
+    {
+        public readonly int NeededItem;
+        public readonly string Hint;
+
+        public DoorKeyExtensionData(int neededItem, string hint)
+        {
+            NeededItem = neededItem;
+            Hint = hint;
         }
     }
 }

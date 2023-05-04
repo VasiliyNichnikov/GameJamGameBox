@@ -2,6 +2,7 @@
 {
     public interface ILoader
     {
-        void Load();
+        void LoadAwake();
+        void LoadStart();
     }
 }

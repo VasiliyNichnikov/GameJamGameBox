@@ -1,5 +1,4 @@
 ﻿using Core.Payer;
-using Loaders.Data.Ready;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -87,13 +86,25 @@ namespace Core.UI
 
         private void UpdateInfoAboutAction(ItemCollector.ObjectInTrigger objectOnTrigger)
         {
-            if (objectOnTrigger.IsItemEmpty())
+            if (objectOnTrigger.IsEmpty())
             {
                 _infoAboutAction.gameObject.SetActive(false);
                 return;
             }
-            _infoAboutAction.gameObject.SetActive(true);
-            _infoAboutAction.text = objectOnTrigger.Item!.InfoAboutItem;
+
+            if (!objectOnTrigger.IsItemEmpty())
+            {
+                _infoAboutAction.gameObject.SetActive(true);
+                _infoAboutAction.text = objectOnTrigger.Item!.InfoAboutItem;
+                return;
+            }
+
+            if (!objectOnTrigger.IsInteractionEmpty() && objectOnTrigger.InteractionObject!.HasHint)
+            {
+                _infoAboutAction.gameObject.SetActive(true);
+                _infoAboutAction.text = objectOnTrigger.InteractionObject!.Hint;
+                return;
+            }
         }
         
         public override void Dispose()

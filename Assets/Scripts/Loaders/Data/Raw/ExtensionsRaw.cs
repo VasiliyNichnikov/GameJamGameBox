@@ -38,4 +38,10 @@ namespace Loaders.Data.Raw
         public List<float> ScaleItem { get; set; }
         public List<float> RotationItem { get; set; }
     }
+
+    public struct DoorKeyExtension
+    {
+        public int NeededItem { get; set; }
+        public string Hint { get; set; }
+    }
 }

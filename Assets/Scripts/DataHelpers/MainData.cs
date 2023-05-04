@@ -8,6 +8,7 @@ namespace DataHelpers
         public QuestDataHelper QuestHelper { get; }
         public TriggerDataHelper TriggerHelper { get; }
         public PlotDataHelper PlotHelper { get; }
+        public DoorsDataHelper DoorHelper { get; }
 
         public MainData()
         {
@@ -15,14 +16,20 @@ namespace DataHelpers
             QuestHelper = new QuestDataHelper();
             TriggerHelper = new TriggerDataHelper();
             PlotHelper = new PlotDataHelper();
+            DoorHelper = new DoorsDataHelper();
         }
 
-        public void Load()
+        public void LoadAwake()
         {
             MapHelper.Load();
             QuestHelper.Load();
             TriggerHelper.Load();
             PlotHelper.Load();
+            DoorHelper.Load();
+        }
+
+        public void LoadStart()
+        {
         }
     }
 }

@@ -18,6 +18,11 @@ namespace Core.Quests
             Message = message;
         }
 
+        protected void StartPlot()
+        {
+            Manager.QuestCompleted(Message.Data);
+        }
+
         public abstract bool IsCompletedQuest();
     }
 }

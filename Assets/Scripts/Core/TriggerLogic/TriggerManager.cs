@@ -16,13 +16,18 @@ namespace Core.TriggerLogic
             _system.CheckTriggers();
         }
         
-        public void Load()
+        public void LoadAwake()
         {
             var data = Main.Instance.Data.TriggerHelper;
             foreach (var trigger in data.Triggers)
             {
                 TriggerSystem.GetAndAddTrigger(_system, trigger);
             }
+        }
+
+        public void LoadStart()
+        {
+            // nothing
         }
     }
 }

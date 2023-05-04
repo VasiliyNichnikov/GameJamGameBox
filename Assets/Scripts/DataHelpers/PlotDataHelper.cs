@@ -8,7 +8,7 @@ using Utils;
 
 namespace DataHelpers
 {
-    public class PlotDataHelper : ILoader
+    public class PlotDataHelper
     {
         private const string PlotFile = "Plot";
 

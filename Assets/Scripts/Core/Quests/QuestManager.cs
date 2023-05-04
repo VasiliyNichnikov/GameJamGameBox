@@ -15,9 +15,14 @@ namespace Core.Quests
             OnStartPlotAfterCompletedQuest?.Invoke(data.PlotIdAfterComplete);
         }
 
-        public void Load()
+        public void LoadAwake()
         {
             InitQuestsOnScene();
+        }
+
+        public void LoadStart()
+        {
+            // nothing
         }
 
         private void InitQuestsOnScene()
