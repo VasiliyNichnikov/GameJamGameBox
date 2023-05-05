@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 8134830909532012697}
   - component: {fileID: 5137307594641706812}
   - component: {fileID: 6966951250719538166}
-  m_Layer: 0
+  - component: {fileID: 4751588310713546122}
+  - component: {fileID: 3776811115889714096}
+  m_Layer: 12
   m_Name: plate
-  m_TagString: Untagged
+  m_TagString: Interaction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,3 +85,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4751588310713546122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912457843344824867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e495fb5d2a43b7ae84eaa84c139a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selectedObject: {fileID: 0}
+  _rotateAfterClick: {x: 0, y: 30, z: 0}
+  _numberRotation: 0
+  _checkAxis: 0
+--- !u!65 &3776811115889714096
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912457843344824867}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0064603006, y: 0.0065615647, z: 0.0025126787}
+  m_Center: {x: -7.609454e-18, y: -0.000050621853, z: 0.006877445}

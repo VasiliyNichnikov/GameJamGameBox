@@ -91,6 +91,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7960576016992245964}
     m_Modifications:
+    - target: {fileID: 1407084910806003907, guid: 98c5ce036f68d8941922e7541fb70887,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1407084910806003907, guid: 98c5ce036f68d8941922e7541fb70887,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5825536468742366429, guid: 3b7698a2172ca1d45ae1a12b3fcd6021,
+        type: 2}
     - target: {fileID: 3467568052626044506, guid: 98c5ce036f68d8941922e7541fb70887,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -222,4 +233,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54e133e226a4d488ef934319c9f1178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animation: {fileID: 0}
+  _door: {fileID: 0}
+  _nameObject: Fire_ObjectForChangesState

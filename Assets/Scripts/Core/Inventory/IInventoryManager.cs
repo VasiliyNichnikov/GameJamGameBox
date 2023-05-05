@@ -8,13 +8,15 @@ namespace Core.Inventory
     {
         event Action<ItemData> OnAddItemInInventory;  
         void AddItemInInventory(ItemData data);
+
         /// <summary>
         /// Удаляем предмет из инвентаря, если он есть
         /// </summary>
-        void RemoveItemFromInventory(ItemObjectType type);
+        void RemoveItemFromInventory(int itemId);
+
         /// <summary>
         /// Проверяем наличие предмета у игрока
         /// </summary>
-        bool IsThereItem(ItemObjectType type);
+        bool IsThereItem(int itemId);
     }
 }

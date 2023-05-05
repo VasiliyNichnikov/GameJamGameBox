@@ -46,6 +46,22 @@ namespace Core.Map
             return createdItem;
         }
 
+        public ItemObjectBase AddItemOnScene(int itemId, Vector3 position, Vector3 scale, Quaternion rotation, bool ignoreForRaise = false)
+        {
+            var data = _mapData.GetItemById(itemId);
+            var createdItem = AddItemOnScene(data.ObjectType, position, rotation);
+            createdItem.transform.localScale = scale;
+            if (ignoreForRaise)
+            {
+                createdItem.InitForQuest();
+            }
+            else
+            {
+                createdItem.Init(data, () => _pool.HideObject(createdItem));
+            }
+            return createdItem;
+        }
+
         private void CreateItemsOnScene()
         {
             var items = Main.Instance.Data.MapHelper.Items;
@@ -55,7 +71,7 @@ namespace Core.Map
                 {
                     continue;
                 }
-                
+
                 var createdItem = AddItemOnScene(item.ObjectType, item.Position.Value, item.Rotation.Value);
                 createdItem.Init(item, () => _pool.HideObject(createdItem));
             }
@@ -80,7 +96,7 @@ namespace Core.Map
         private void InitDoorsOnScene()
         {
             var doors = Main.Instance.Data.DoorHelper.Doors;
-            foreach (var doorData in doors)     
+            foreach (var doorData in doors)
             {
                 if (doorData.Data.DoorType == DoorType.Quest)
                 {
@@ -102,6 +118,7 @@ namespace Core.Map
                     Debug.LogError($"Not extension: {doorData.Data.RoomType}");
                     continue;
                 }
+
                 doorKey.Init(_mapData.GetItemById(extension.Value.NeededItem), extension.Value.Hint);
             }
         }

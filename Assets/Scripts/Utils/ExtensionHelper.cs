@@ -63,5 +63,20 @@ namespace Utils
             var jsonMessage = new JsonMessage<T>(data, extension);
             return jsonMessage;
         }
+
+        public static JsonMessage<T> GetMessageForCreateItem<T>(T data, CreateItemExtension extensionRaw)
+            where T : struct
+        {
+            var extension = new CreateItemExtensionData(extensionRaw);
+            var jsonMessage = new JsonMessage<T>(data, extension);
+            return jsonMessage;
+        }
+
+        public static JsonMessage<T> GetMessageForCollectingItems<T>(T data, QuestCollectingItemsException exceptionRaw) where T: struct
+        {
+            var extension = new QuestCollectingItemsExceptionData(exceptionRaw);
+            var jsonMessage = new JsonMessage<T>(data, extension);
+            return jsonMessage;
+        }
     }
 }

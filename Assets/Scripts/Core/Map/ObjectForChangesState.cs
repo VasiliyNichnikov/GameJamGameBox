@@ -6,7 +6,7 @@ namespace Core.Map
 {
     public class ObjectForChangesState : MonoBehaviour
     {
-        [SerializeField] private DoorQuest _door;
+        [SerializeField] private DoorBase _door;
 
         [SerializeField] private string _nameObject;
 

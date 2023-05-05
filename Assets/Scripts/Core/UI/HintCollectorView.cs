@@ -77,9 +77,9 @@ namespace Core.UI
                 IsDisplayed = !objectOnTrigger.IsEmpty();
             }
 
+            UpdateInfoAboutAction(objectOnTrigger);
             if (IsDisplayed)
             {
-                UpdateInfoAboutAction(objectOnTrigger);
                 _selectedTrigger = objectOnTrigger;
             }
         }

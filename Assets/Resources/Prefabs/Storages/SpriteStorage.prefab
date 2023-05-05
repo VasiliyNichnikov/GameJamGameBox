@@ -55,3 +55,9 @@ MonoBehaviour:
     _name: knifeIcon
   - _sprite: {fileID: 21300000, guid: e1cc59d5786d23a4e9498e8ad86ef7a5, type: 3}
     _name: toiletPaperIcon
+  - _sprite: {fileID: 21300000, guid: 843d709db18c3c3449383cd06e350831, type: 3}
+    _name: hourHandIcon
+  - _sprite: {fileID: 21300000, guid: a35412c5c41dac24e91e0230c8577378, type: 3}
+    _name: pendulumIcon
+  - _sprite: {fileID: 21300000, guid: 561ad0b0e2b15e447b8170461196fcf2, type: 3}
+    _name: birdIcon

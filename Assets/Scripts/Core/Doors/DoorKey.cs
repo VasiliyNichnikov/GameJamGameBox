@@ -1,5 +1,6 @@
 ﻿using Core.Inventory;
 using Loaders.Data.Ready;
+using UnityEngine;
 
 namespace Core.Doors
 {
@@ -13,7 +14,7 @@ namespace Core.Doors
 
         private ItemData _neededItem;
         private bool _isThereKey; // Был ли собран ключ
-
+        
         private IInventoryManager GetInventory() => _inventory ??= Game.Instance.InventoryManager;
         private IInventoryManager _inventory;
         private string _hint;
@@ -27,9 +28,9 @@ namespace Core.Doors
         public override void Input()
         {
             
-            if (!_isThereKey && GetInventory().IsThereItem(_neededItem.ObjectType))
+            if (!_isThereKey && GetInventory().IsThereItem(_neededItem.Id))
             {
-                GetInventory().RemoveItemFromInventory(_neededItem.ObjectType);
+                GetInventory().RemoveItemFromInventory(_neededItem.Id);
                 _isThereKey = true;
             }
             

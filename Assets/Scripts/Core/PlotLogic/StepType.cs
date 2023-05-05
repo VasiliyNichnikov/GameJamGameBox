@@ -7,6 +7,7 @@
         TextDialog,
         Timer,
         ChangeStateObject,
-        OpenDoor
+        OpenDoor,
+        CreateItem
     }
 }

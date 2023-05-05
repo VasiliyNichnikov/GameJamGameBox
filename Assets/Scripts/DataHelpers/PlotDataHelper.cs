@@ -69,6 +69,14 @@ namespace DataHelpers
                         allStepsData.Add(jsonMessage);
                         continue;
                     }
+
+                    if (step.CreateItemExtension != null)
+                    {
+                        var extensionRaw = step.CreateItemExtension.Value;
+                        var jsonMessage = ExtensionHelper.GetMessageForCreateItem(stepData, extensionRaw);
+                        allStepsData.Add(jsonMessage);
+                        continue;
+                    }
                 }
 
                 var plotData = new PlotData(plot.Id, allStepsData);

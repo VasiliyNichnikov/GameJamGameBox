@@ -81,3 +81,5 @@ crashlytics-build.properties
 *.DS_Store
 # Ignore models meta data
 # Assets/Resources/ModelsRaw/**/*.meta
+# IgnoreSound Ambiences
+Assets/Resources/Sound/Background/Ambiences/

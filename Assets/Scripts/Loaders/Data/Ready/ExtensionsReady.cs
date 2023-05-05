@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Core.Quests.CollectingItems;
+using Extensions;
+using Loaders.Data.Raw;
+using UnityEngine;
 
 namespace Loaders.Data.Ready
 {
@@ -83,6 +87,48 @@ namespace Loaders.Data.Ready
         {
             NeededItem = neededItem;
             Hint = hint;
+        }
+    }
+
+    public struct CreateItemExtensionData
+    {
+        public readonly int ItemId;
+        public readonly Vector3 Position;
+        public readonly Quaternion Rotation;
+        public readonly Vector3 Scale;
+
+        public CreateItemExtensionData(CreateItemExtension extensionRaw)
+        {
+            ItemId = extensionRaw.ItemId;
+            Position = extensionRaw.Position.ConvertToVector3();
+            Rotation = extensionRaw.Rotation.ConvertToRotation();
+            Scale = extensionRaw.Scale.ConvertToVector3();
+        }
+    }
+
+    public struct QuestCollectingItemsExceptionData
+    {
+        public readonly List<RequiredItemData> RequiredItems;
+
+        public QuestCollectingItemsExceptionData(QuestCollectingItemsException exceptionRaw)
+        {
+            RequiredItems = new List<RequiredItemData>();
+            foreach (var item in exceptionRaw.RequiredItems)
+            {
+                RequiredItems.Add(new RequiredItemData(item));
+            }
+        }
+    }
+    
+    public struct RequiredItemData
+    {
+        public readonly int ItemId;
+        public readonly RequiredItemType Type;
+
+        public RequiredItemData(QuestCollectingItemsException.RequiredItem requiredItemRaw)
+        {
+            ItemId = requiredItemRaw.ItemId;
+            Type = requiredItemRaw.Type.ConvertToEnum<RequiredItemType>();
         }
     }
 }

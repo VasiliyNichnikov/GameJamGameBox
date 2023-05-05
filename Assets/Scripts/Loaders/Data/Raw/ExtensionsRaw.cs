@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Loaders.Data.Raw
 {
@@ -43,5 +44,24 @@ namespace Loaders.Data.Raw
     {
         public int NeededItem { get; set; }
         public string Hint { get; set; }
+    }
+
+    public struct CreateItemExtension
+    {
+        public int ItemId { get; set; }
+        public List<float> Position { get; set; }
+        public List<float> Rotation { get; set; }
+        public List<float> Scale { get; set; }
+    }
+
+    public struct QuestCollectingItemsException
+    {
+        public struct RequiredItem
+        {
+            public string Type { get; set; }
+            public int ItemId { get; set; }
+        }
+        
+        public List<RequiredItem> RequiredItems { get; set; }
     }
 }

@@ -33,6 +33,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-5825536468742366429
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Livingroom
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: a598d8739c7ab654f95d523275dd8105
+  m_Children: []
+  m_Volume: 2a10616a0bbded44a95acffa80343856
+  m_Pitch: 9afe6bdeb9a489d44ad17d4f758ba475
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 132952584562696203}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &-1740532775737189717
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -92,6 +111,7 @@ AudioMixerController:
     - c9cb5344910dccc4bb320f4e4922e26a
     - 2d11efd66482b9548a169d2bebb189c8
     - 2525475be698f3a43a831d0ba19c4028
+    - a598d8739c7ab654f95d523275dd8105
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -109,6 +129,7 @@ AudioMixerGroupController:
   - {fileID: 3387019395962102749}
   - {fileID: 5007626450783441186}
   - {fileID: 3234664949566262576}
+  - {fileID: -5825536468742366429}
   m_Volume: 1659a52d529229e41b02ef90f3dcf051
   m_Pitch: 10430b1d2e16a8c48b4a16894e4b1635
   m_Send: 00000000000000000000000000000000
@@ -161,6 +182,20 @@ AudioMixerEffectController:
     m_GUID: d171d3425fc4ce24aa453029bba652c5
   - m_ParameterName: Maximum amp
     m_GUID: 933be75f5c494824c81144e445a43b7f
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &132952584562696203
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 96bf04de7bba055488dab005ac75be69
+  m_EffectName: Attenuation
+  m_MixLevel: 83c6ebcea9a0fcd4e9043084f8984d87
+  m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0

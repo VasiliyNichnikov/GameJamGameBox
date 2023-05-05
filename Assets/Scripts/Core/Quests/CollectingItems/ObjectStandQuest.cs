@@ -6,17 +6,21 @@ namespace Core.Quests.CollectingItems
 {
     public class ObjectStandQuest : InteractionObjectBase
     {
-        [SerializeField, Header("Точка в которо создадим поставленны объект")] 
-        private Transform _pointForObject;
+        public RequiredItemType RequiredItemType => Type;
         
-        private ItemObjectType _itemOnStand;
+        [SerializeField, Header("Объект, который нужно показать после получения предмета")] private GameObject _standItem;
+        [SerializeField] private RequiredItemType Type;
+
         public override bool IsDisplayedHintAfterInput => true;
         public override bool IsQuestCompleted { get; protected set; }
-        private Action _checkAfterAddItem;
-
-        public void Init(ItemObjectType itemOnStand, Action checkAfterAddItem)
+        
+        private Action<RequiredItemType> _checkAfterAddItem;
+        private int _neededItemId; 
+        
+        public void Init(int needItem, Action<RequiredItemType> checkAfterAddItem)
         {
-            _itemOnStand = itemOnStand;
+            _neededItemId = needItem;
+            _standItem.SetActive(false);
             _checkAfterAddItem = checkAfterAddItem;
         }
         
@@ -28,13 +32,14 @@ namespace Core.Quests.CollectingItems
             }
             
             var inventory = Game.Instance.InventoryManager;
-            if (inventory.IsThereItem(_itemOnStand))
+            if (inventory.IsThereItem(_neededItemId))
             {
                 // Порядок важен
-                Main.Instance.MapManager.AddItemOnScene(_itemOnStand, _pointForObject.position, Quaternion.identity);
-                inventory.RemoveItemFromInventory(_itemOnStand);
+                _standItem.SetActive(true);
+                inventory.RemoveItemFromInventory(_neededItemId);
                 IsQuestCompleted = true;
-                _checkAfterAddItem?.Invoke();
+                _checkAfterAddItem?.Invoke(Type);
+                enabled = false;
             }
         }
     }

@@ -7,7 +7,15 @@ namespace Core.Doors
     public abstract class DoorBase : InteractionObjectBase
     {
         public RoomType GetRoomType() => RoomType;
-        
+
+        private enum AxisRotation
+        {
+            X,
+            Y,
+            Z
+        }
+
+        [SerializeField] private AxisRotation _selectedAxis;
         [SerializeField] private Transform _pointRotation;
         [SerializeField] protected RoomType RoomType;
         [SerializeField] private float _angleOpen;
@@ -17,7 +25,7 @@ namespace Core.Doors
 
         private bool _isAnimation;
         private bool _isOpened;
-        
+
         public void Open()
         {
             if (_isAnimation)
@@ -47,14 +55,31 @@ namespace Core.Doors
                 Close();
                 return;
             }
+
             Open();
         }
 
         private void RotateDoor(float angle)
         {
+            var currentRotation = _pointRotation.rotation.eulerAngles;
+            var rotation = Quaternion.identity;
+
+            switch (_selectedAxis)
+            {
+                case AxisRotation.X:
+                    rotation = Quaternion.Euler(angle, currentRotation.y, currentRotation.z);
+                    break;
+                case AxisRotation.Y:
+                    rotation = Quaternion.Euler(currentRotation.x, angle, currentRotation.z);
+                    break;
+
+                case AxisRotation.Z:
+                    rotation = Quaternion.Euler(currentRotation.x, currentRotation.y, angle);
+                    break;
+            }
+
             _isAnimation = true;
-            var rotation = new Vector3(0, angle, 0);
-            _pointRotation.DORotate(rotation, _duration).OnComplete(() => _isAnimation = false);
+            _pointRotation.DORotateQuaternion(rotation, _duration).OnComplete(() => _isAnimation = false);
         }
     }
 }

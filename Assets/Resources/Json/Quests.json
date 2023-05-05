@@ -3,38 +3,49 @@
     {
       "Id": 1,
       "QuestType": "RotationObjects",
-      "RequiredItems": [],
       "PlotIdAfterComplete": 1
     },
     {
       "Id": 2,
       "QuestType": "CollectingItems",
-      "RequiredItems": [3, 4, 5],
-      "PlotIdAfterComplete": 2
+      "PlotIdAfterComplete": 2,
+      "QuestCollectingItemsException": {
+        "RequiredItems": [
+          {
+            "Type": "Dial",
+            "ItemId": 6
+          },
+          {
+            "Type": "Pendulum",
+            "ItemId": 8
+          },
+          {
+            "Type": "Bird",
+            "ItemId": 9
+          }
+        ]
+      }
     },
     {
       "Id": 3,
       "QuestType": "CollectFlashlight",
-      "RequiredItems": [],
       "PlotIdAfterComplete": 3
     },
     {
       "Id": 4,
       "QuestType": "Safe",
-      "RequiredItems": [],
       "PlotIdAfterComplete": 4,
       "QuestSafeExtension": {
         "StartValue": 0,
         "RightAnswer": 69,
-        "ItemInside": 5,
-        "ScaleItem": [0.2, 0.2, 0.2],
-        "RotationItem": [0, 0, 0]
+        "ItemInside": 8,
+        "ScaleItem": [0.57, 0.57, 0.57],
+        "RotationItem": [0, 0, 90]
       }
     },
     {
       "Id": 5,
       "QuestType": "FrontDoor",
-      "RequiredItems": [],
       "PlotIdAfterComplete": 5
     }
   ]

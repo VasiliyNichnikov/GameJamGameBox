@@ -16,38 +16,39 @@
       "Title": "Ключ от кухни",
       "Description": "Дверь где-то в доме!",
       "NameIcon": "keyIcon",
-      "AddToHand": false,
-      "Position": [-3.2, 0.5, 0],
-      "Rotation": [0, 0, 0]
+      "Position": [-2.666, 0.328, 3.816],
+      "Rotation": [0, 0, 90]
     },
     {
-      "Id": 3,
-      "Type": "Beer",
-      "Title": "Банка пива",
-      "Description": "Хуй знает для чего, но скоро узнаем)",
-      "NameIcon": "beerIcon",
-      "AddToHand": false,
-      "Position": [0.96, -0.85, -4.2],
-      "Rotation": [0, 0, 0]
+      "Id": 6,
+      "Type": "HourHand",
+      "Title": "Часовая стрелка",
+      "Description": "Нужно вставить в часы!",
+      "NameIcon": "hourHandIcon"
     },
     {
-      "Id": 4,
-      "Type": "Knife",
-      "Title": "Нож",
-      "Description": "Может попробовать монстра заволить им?",
-      "NameIcon": "knifeIcon",
-      "AddToHand": false,
-      "Position": [-0.96, -0.85, -4.27],
-      "Rotation": [0, 0, 0]
+      "Id": 7,
+      "Type": "Key",
+      "Title": "Ключ от кладовки",
+      "Description": "Хм, что там?)",
+      "NameIcon": "keyIcon"
     },
     {
-      "Id": 5,
-      "Type": "ToiletPaper",
-      "Title": "Туалетная бумага",
-      "Description": "Поможет пройти игру!",
-      "NameIcon": "toiletPaperIcon",
-      "AddToHand": false
+      "Id": 8,
+      "Type": "Pendulum",
+      "Title": "Маятник",
+      "Description": "Поможет выбраться из ада",
+      "NameIcon": "pendulumIcon"
+    },
+    {
+      "Id": 9,
+      "Type": "Bird",
+      "Title": "Птица победы",
+      "Description": "Скоро кошмар закончится или нет)",
+      "NameIcon": "birdIcon",
+      "Position": [17.6851, 0.1255, 1.7381],
+      "Rotation": [-180, 0, 93.636]
     }
   ],
-  "Types": ["Flashlight", "Key", "Beer", "Knife", "ToiletPaper"] 
+  "Types": ["Flashlight", "Key", "Beer", "Knife", "ToiletPaper", "hourHand", "pendulum"] 
 }

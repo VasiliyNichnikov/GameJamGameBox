@@ -10,6 +10,7 @@ namespace Loaders.Data.Raw
         public TimerExtension? TimerExtension { get; set; }
         public ChangeStateObjectExtension? ChangeStateObjectExtension { get; set; }
         public OpenDoorExtension? OpenDoorExtension { get; set; }
+        public CreateItemExtension? CreateItemExtension { get; set; }
     }
 
     public struct Plot

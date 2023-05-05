@@ -63,5 +63,15 @@ namespace Core.Inventory.Item
         }
 
         public abstract void Dispose();
+
+        public override bool Equals(object other)
+        {
+            if (other is ItemObjectBase itemObject)
+            {
+                return Data.ObjectType == itemObject.ObjectType && Data.Id == itemObject.Data.Id;
+            }
+
+            return false;
+        }
     }
 }

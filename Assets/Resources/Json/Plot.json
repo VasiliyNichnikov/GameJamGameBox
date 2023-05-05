@@ -6,36 +6,38 @@
         {
           "Type": "Sound",
           "SoundExtension": {
-            "Sound": "demonic-woman-scream"
+            "Sound": "four-voices-whispering-6"
           }
         },
         {
           "Type": "Timer",
           "TimerExtension": {
-            "Timer": 5
+            "Timer": 1.5
           }
         },
         {
-          "Type": "MonsterAction"
-        },
-        {
-          "Type": "TextDialog",
-          "TextDialogExtension": {
-            "NamePerson": "Василий!",
-            "MessagePerson": "Привет! Тебе пизда)"
+          "Type": "OpenDoor",
+          "OpenDoorExtension": {
+            "NameDoor": "Fridge_OpenAfterCompleteRotationObjects",
+            "NameAnimation": "OpenDoor"
           }
         },
         {
-          "Type": "TextDialog",
-          "TextDialogExtension": {
-            "NamePerson": "Василий!",
-            "MessagePerson": "Это уже второе сообщение от меня)"
+          "Type": "CreateItem",
+          "CreateItemExtension": {
+            "ItemId": 6,
+            "Position": [3.043, 0.5608, 12.3928],
+            "Rotation": [-90, 0, 38.736],
+            "Scale": [5, 5, 5]
           }
         },
         {
-          "Type": "Sound",
-          "SoundExtension": {
-            "Sound": "dramatic-hit"
+          "Type": "CreateItem",
+          "CreateItemExtension": {
+            "ItemId": 7,
+            "Position": [3.525, 0.449, 5.213],
+            "Rotation": [0, -13, 90],
+            "Scale": [0.45, 0.45, 0.45]
           }
         }
       ]
@@ -56,9 +58,22 @@
       "Id": 3,
       "Steps": [
         {
+          "Type": "Sound",
+          "SoundExtension": {
+            "Sound": "dramatic-hit"
+          }
+        },
+        {
+          "Type": "ChangeStateObject",
+          "ChangeStateObjectExtension": {
+            "NameObject": "Lamp_Bedroom_AfterCollectedFlashlight",
+            "State": false
+          }
+        },
+        {
           "Type": "Timer",
           "TimerExtension": {
-            "Timer": 1.5
+            "Timer": 0.5
           }
         },
         {
@@ -72,19 +87,6 @@
           "OpenDoorExtension": {
             "NameDoor": "Door_AfterCollectedFlashlight",
             "NameAnimation": "OpenDoor"
-          }
-        },
-        {
-          "Type": "Sound",
-          "SoundExtension": {
-            "Sound": "dramatic-hit"
-          }
-        },
-        {
-          "Type": "ChangeStateObject",
-          "ChangeStateObjectExtension": {
-            "NameObject": "Lamp_Bedroom_AfterCollectedFlashlight",
-            "State": false
           }
         }
       ]

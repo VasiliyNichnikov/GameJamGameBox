@@ -24,9 +24,14 @@ namespace DataHelpers
             var data = StaticLoader.LoadData<QuestsInGame>(QuestsFile);
             foreach (var item in data.Quests)
             {
-                var selectedItems = GetItems(item.RequiredItems);
-                var quest = new QuestData(item.Id, item.QuestType.ConvertToEnum<QuestType>(), item.PlotIdAfterComplete, selectedItems);
-                
+                var quest = new QuestData(item.Id, item.QuestType.ConvertToEnum<QuestType>(), item.PlotIdAfterComplete);
+
+                if (item.QuestCollectingItemsException != null)
+                {
+                    var extension = ExtensionHelper.GetMessageForCollectingItems(quest, item.QuestCollectingItemsException.Value);
+                    _quests.Add(extension);
+                    continue;
+                }
                 if (item.QuestSafeExtension != null)
                 {
                     var extension = ExtensionHelper.GetMessageForQuestSafe(quest, item.QuestSafeExtension.Value);
@@ -35,18 +40,6 @@ namespace DataHelpers
                 }
                 _quests.Add(new JsonMessage<QuestData>(quest, null));
             }
-        }
-
-        private List<ItemData> GetItems(IReadOnlyCollection<int> itemIds)
-        {
-            var selectedItems = new List<ItemData>();
-            var items = Main.Instance.Data.MapHelper.Items;
-            foreach (var item in items)
-            {
-                selectedItems.AddRange(from id in itemIds where item.Id == id select item);
-            }
-
-            return selectedItems;
         }
     }
 }

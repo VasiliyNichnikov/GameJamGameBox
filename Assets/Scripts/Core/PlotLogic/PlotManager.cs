@@ -64,6 +64,9 @@ namespace Core.PlotLogic
                     case StepType.OpenDoor:
                         action = new PlotOpenDoor();
                         break;
+                    case StepType.CreateItem:
+                        action = new PlotCreateItem();
+                        break;
                 }
 
                 if (action == null)

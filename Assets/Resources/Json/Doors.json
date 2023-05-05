@@ -7,6 +7,14 @@
         "NeededItem": 2,
         "Hint": "Нужен ключ от кухни"
       }
+    },
+    {
+      "Type": "Key",
+      "RoomType": "Storage",
+      "DoorKeyExtension": {
+        "NeededItem": 7,
+        "Hint": "Нужен ключ от кладовки"
+      }
     }
   ]
 }

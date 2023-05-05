@@ -6,6 +6,9 @@
         Flashlight,
         Beer,
         Knife,
-        ToiletPaper
+        ToiletPaper,
+        HourHand,
+        Pendulum,
+        Bird
     }
 }

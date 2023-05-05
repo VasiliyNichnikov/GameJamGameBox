@@ -9,6 +9,7 @@ namespace Loaders.Data.Raw
         public List<int> RequiredItems { get; set; }
         public int PlotIdAfterComplete { get; set; }
         public QuestSafeExtension? QuestSafeExtension { get; set; }
+        public QuestCollectingItemsException? QuestCollectingItemsException { get; set; }
     }
     
     public struct QuestsInGame

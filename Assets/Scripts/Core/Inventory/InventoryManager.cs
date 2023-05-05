@@ -31,12 +31,12 @@ namespace Core.Inventory
             Main.Instance.InputHandler.OnInputKeyboard -= ChangeStateInventory;
         }
         
-        public void RemoveItemFromInventory(ItemObjectType type)
+        public void RemoveItemFromInventory(int itemId)
         {
-            var selectedItem = _storage.Items.FirstOrDefault(item => item.ObjectType == type);
+            var selectedItem = _storage.Items.FirstOrDefault(item => item.Id == itemId);
             if (selectedItem.Title == null)
             {
-                Debug.LogWarning($"RemoveItemFromInventory: Not found item with type: {type}");
+                Debug.LogWarning($"RemoveItemFromInventory: Not found item with type: {itemId}");
                 return;
             }
 
@@ -44,9 +44,9 @@ namespace Core.Inventory
             _inventoryView.Refresh(_storage.Items);
         }
 
-        public bool IsThereItem(ItemObjectType type)
+        public bool IsThereItem(int itemId)
         {
-            return _storage.Items.Any(item => item.ObjectType == type);
+            return _storage.Items.Any(item => item.Id == itemId);
         }
         
         public void AddItemInInventory(ItemData data)
