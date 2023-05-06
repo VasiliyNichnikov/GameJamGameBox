@@ -9,5 +9,10 @@ namespace Core.Quests
         /// В int передаем id сюжета для запуска
         /// </summary>
         event Action<int> OnStartPlotAfterCompletedQuest;
+        
+        /// <summary>
+        /// Квест под выбранным id был завершен
+        /// </summary>
+        event Action<int> OnQuestCompleted;
     }
 }

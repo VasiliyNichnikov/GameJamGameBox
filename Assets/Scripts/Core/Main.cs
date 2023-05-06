@@ -1,4 +1,5 @@
-﻿using Core.Doors;
+﻿using System;
+using Core.Doors;
 using Core.InputSystem;
 using Core.Inventory;
 using Core.Map;
@@ -11,6 +12,7 @@ using Core.UI;
 using DataHelpers;
 using UnityEngine;
 using UnityEngine.Audio;
+using Utils;
 
 namespace Core
 {
@@ -22,6 +24,8 @@ namespace Core
     public class Main : MonoBehaviour
     {
         public static Main Instance { get; private set; }
+
+        public event Action<int> OnUpdateTime; 
 
         public ItemFactory ItemFactory => _itemFactory;
         public SpriteStorage SpriteStorage { get; private set; }
@@ -44,6 +48,7 @@ namespace Core
         [SerializeField] private DoorStorage _doorStorage;
         [SerializeField] private AudioMixerGroup _mixerGroup;
         [SerializeField] private HouseSystem _houseSystem;
+        [SerializeField] private Transform _playerTransform;
 
 
         [Space(10)] [SerializeField] private ItemFactory _itemFactory;
@@ -82,15 +87,15 @@ namespace Core
             _loaderGame = new LoaderGameSceneAndUI();
             // Загружаем Json
             Data = new MainData();
-            _mapManager = new MapManager(Data.MapHelper);
-            // _triggerManager = new TriggerManager();
+            _mapManager = new MapManager(Data.MapHelper, _playerTransform);
+            _triggerManager = new TriggerManager();
             _questManager = new QuestManager();
             // Перемещаемся в ОЗУ
             _loaderGame
                 .AddLoader(Data)
                 .AddLoader(_questManager)
                 .AddLoader(_mapManager)
-                // .AddLoader(_triggerManager)
+                .AddLoader(_triggerManager)
                 .StartLoadingOnAwake();
 
             _plotManager = new PlotManager(_questManager);
@@ -106,11 +111,18 @@ namespace Core
         private void OnDestroy()
         {
             _plotManager.Dispose();
+            _triggerManager.Dispose();
         }
 
         private void Start()
         {
             _loaderGame.StartLoadingOnStart();
+        }
+
+        private void Update()
+        {
+            _triggerManager.Update();
+            OnUpdateTime?.Invoke(TimeUtils.GetCurrentTimeFromStartup());
         }
     }
 }

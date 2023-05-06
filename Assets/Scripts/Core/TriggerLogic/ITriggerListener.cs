@@ -2,8 +2,10 @@
 
 namespace Core.TriggerLogic
 {
-    public interface ITriggerListener
+    public interface ITriggerListener : IDisposable
     {
+        // Проигрывается триггер много раз или нет
+        bool ManyTimer { get; }
         bool IsTriggered { get; }
         /// <summary>
         /// Проверяем может ли срабатывать триггер
@@ -16,6 +18,6 @@ namespace Core.TriggerLogic
         /// <summary>
         /// Срабатывает после выполнения триггера
         /// </summary>
-        void TriggerCompleted();
+        void TriggerDestroy();
     }
 }

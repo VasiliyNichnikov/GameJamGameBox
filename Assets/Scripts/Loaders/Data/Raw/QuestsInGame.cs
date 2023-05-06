@@ -6,7 +6,6 @@ namespace Loaders.Data.Raw
     {
         public int Id { get; set; }
         public string QuestType { get; set; }
-        public List<int> RequiredItems { get; set; }
         public int PlotIdAfterComplete { get; set; }
         public QuestSafeExtension? QuestSafeExtension { get; set; }
         public QuestCollectingItemsException? QuestCollectingItemsException { get; set; }

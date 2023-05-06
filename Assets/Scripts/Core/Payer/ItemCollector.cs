@@ -94,21 +94,6 @@ namespace Core.Payer
             OnChangeStateActive?.Invoke(ObjectInTrigger.Empty());
         }
 
-#if UNITY_EDITOR
-        private void OnDrawGizmos()
-        {
-            if (Camera.main == null)
-            {
-                return;
-            }
-            
-            var camera = Camera.main;
-            var start = camera.transform.position;
-            var end = camera.transform.TransformDirection(Vector3.forward) * _maxDistance;
-            Gizmos.DrawLine(start, end);
-        }
-#endif
-        
         private void TryToDisplayHintCollectorButton<T>(GameObject go) where T : Object
         {
             if (!go.TryGetComponent(out T component))

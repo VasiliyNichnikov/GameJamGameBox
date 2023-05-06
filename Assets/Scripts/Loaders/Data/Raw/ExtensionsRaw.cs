@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 
 namespace Loaders.Data.Raw
 {
@@ -12,6 +11,7 @@ namespace Loaders.Data.Raw
     {
         public string NamePerson { get; set; }
         public string MessagePerson { get; set; }
+        public bool? ShowExitButton { get; set; }
     }
 
     public struct TimerExtension
@@ -63,5 +63,13 @@ namespace Loaders.Data.Raw
         }
         
         public List<RequiredItem> RequiredItems { get; set; }
+    }
+
+    public struct LightTriggerExtension
+    {
+        public int CompletedQuest { get; set; }
+        public float MinimumDelaySeconds { get; set; }
+        public float MaximumDelaySeconds { get; set; }
+        public float MinimumDistanceToPlayer { get; set; }
     }
 }

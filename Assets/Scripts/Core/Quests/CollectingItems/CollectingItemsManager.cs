@@ -61,7 +61,9 @@ namespace Core.Quests.CollectingItems
 
         private void TryStartPlayClock()
         {
-            if (!_audioTickTack.isPlaying && _containItems.ContainsKey(RequiredItemType.Dial))
+            if (!_audioTickTack.isPlaying && 
+                _containItems.ContainsKey(RequiredItemType.Dial) && 
+                _containItems.ContainsKey(RequiredItemType.Pendulum))
             {
                 _audioTickTack.enabled = true;
                 _audioTickTack.Play();

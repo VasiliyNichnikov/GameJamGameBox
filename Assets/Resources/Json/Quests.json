@@ -3,12 +3,14 @@
     {
       "Id": 1,
       "QuestType": "RotationObjects",
+      "Comment": "Поворот объектов",
       "PlotIdAfterComplete": 1
     },
     {
       "Id": 2,
       "QuestType": "CollectingItems",
-      "PlotIdAfterComplete": 2,
+      "PlotIdAfterComplete": 7,
+      "Comment": "Сбор часов",
       "QuestCollectingItemsException": {
         "RequiredItems": [
           {
@@ -29,11 +31,13 @@
     {
       "Id": 3,
       "QuestType": "CollectFlashlight",
+      "Comment": "Сбор фонаря",
       "PlotIdAfterComplete": 3
     },
     {
       "Id": 4,
       "QuestType": "Safe",
+      "Comment": "Открытие сейфа",
       "PlotIdAfterComplete": 4,
       "QuestSafeExtension": {
         "StartValue": 0,
@@ -46,6 +50,7 @@
     {
       "Id": 5,
       "QuestType": "FrontDoor",
+      "Comment": "Встреча с монстром (Должна была быть)",
       "PlotIdAfterComplete": 5
     }
   ]

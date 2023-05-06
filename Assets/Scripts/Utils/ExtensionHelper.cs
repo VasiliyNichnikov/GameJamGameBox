@@ -15,10 +15,11 @@ namespace Utils
             return jsonMessage;
         }
 
-        public static JsonMessage<T> GetMessageForTextDialogExt<T>(T data, string namePerson, string messagePerson)
+        public static JsonMessage<T> GetMessageForTextDialogExt<T>(T data, string namePerson, string messagePerson, bool? showExitButton)
             where T : struct
         {
-            var extension = new TextDialogExtensionData(namePerson, messagePerson);
+            var result = showExitButton ?? false;
+            var extension = new TextDialogExtensionData(namePerson, messagePerson, result);
             var jsonMessage = new JsonMessage<T>(data, extension);
             return jsonMessage;
         }
@@ -75,6 +76,13 @@ namespace Utils
         public static JsonMessage<T> GetMessageForCollectingItems<T>(T data, QuestCollectingItemsException exceptionRaw) where T: struct
         {
             var extension = new QuestCollectingItemsExceptionData(exceptionRaw);
+            var jsonMessage = new JsonMessage<T>(data, extension);
+            return jsonMessage;
+        }
+
+        public static JsonMessage<T> GetMessageForLightTrigger<T>(T data, LightTriggerExtension extensionRaw) where T: struct
+        {
+            var extension = new LightTriggerExtensionData(extensionRaw);
             var jsonMessage = new JsonMessage<T>(data, extension);
             return jsonMessage;
         }

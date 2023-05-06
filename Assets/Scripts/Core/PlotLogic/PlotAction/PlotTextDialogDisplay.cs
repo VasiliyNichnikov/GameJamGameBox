@@ -20,7 +20,7 @@ namespace Core.PlotLogic.PlotAction
             }
 
             _dialog = Main.Instance.DialogManager.ShowDialog<MessagePersonView>();
-            _dialog.Init(ext.Value.NamePerson, ext.Value.MessagePerson);
+            _dialog.Init(ext.Value.NamePerson, ext.Value.MessagePerson, ext.Value.ShowExitButton);
         }
 
         public override bool IsEventCompleted()

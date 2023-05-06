@@ -7,18 +7,26 @@ namespace Core.UI.Quests
     {
         [SerializeField] private Text _namePerson;
         [SerializeField] private Text _messagePerson;
-
-        public void Init(string namePerson, string messagePerson)
+        [SerializeField] private Button _exitButton;
+        
+        public void Init(string namePerson, string messagePerson, bool showExitButton)
         {
             base.Init();
             
             _namePerson.text = namePerson;
             _messagePerson.text = messagePerson;
+
+            _exitButton.gameObject.SetActive(showExitButton);
         }
 
         public override void Dispose()
         {
             // nothing
+        }
+
+        public void OnMenu()
+        {
+            Debug.LogWarning("Go to menu");
         }
     }
 }

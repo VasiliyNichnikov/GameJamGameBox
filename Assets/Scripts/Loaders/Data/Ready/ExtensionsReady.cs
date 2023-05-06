@@ -20,11 +20,13 @@ namespace Loaders.Data.Ready
     {
         public readonly string NamePerson;
         public readonly string MessagePerson;
+        public readonly bool ShowExitButton;
 
-        public TextDialogExtensionData(string namePerson, string messagePerson)
+        public TextDialogExtensionData(string namePerson, string messagePerson, bool showExitButton)
         {
             NamePerson = namePerson;
             MessagePerson = messagePerson;
+            ShowExitButton = showExitButton;
         }
     }
 
@@ -129,6 +131,22 @@ namespace Loaders.Data.Ready
         {
             ItemId = requiredItemRaw.ItemId;
             Type = requiredItemRaw.Type.ConvertToEnum<RequiredItemType>();
+        }
+    }
+
+    public struct LightTriggerExtensionData
+    {
+        public readonly int CompletedQuest;
+        public readonly float MinimumDelaySeconds;
+        public readonly float MaximumDelaySeconds;
+        public readonly float MinimumDistanceToPlayer;
+
+        public LightTriggerExtensionData(LightTriggerExtension extensionRaw)
+        {
+            CompletedQuest = extensionRaw.CompletedQuest;
+            MinimumDelaySeconds = extensionRaw.MinimumDelaySeconds;
+            MaximumDelaySeconds = extensionRaw.MaximumDelaySeconds;
+            MinimumDistanceToPlayer = extensionRaw.MinimumDistanceToPlayer;
         }
     }
 }

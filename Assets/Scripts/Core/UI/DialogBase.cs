@@ -59,6 +59,7 @@ namespace Core.UI
 
         public void Show()
         {
+            IsClosed = false;
             gameObject.SetActive(true);
         }
     }

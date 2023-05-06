@@ -1,8 +1,12 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Core.Doors;
 using Core.Inventory.Item;
+using Core.LightLogic;
 using Core.Pool;
+using Core.Rooms;
 using DataHelpers;
+using JetBrains.Annotations;
 using Loaders;
 using Loaders.Data.Ready;
 using UnityEngine;
@@ -14,10 +18,14 @@ namespace Core.Map
         private readonly MapDataHelper _mapData;
         private readonly ItemObjectPool _pool;
         private ObjectForChangesState[] _objectForChanges;
+        private List<LightForTrigger> _lightsForTrigger;
+        private readonly Transform _playerTransform;
+        private BrokenDoor _brokenDoor;
 
-        public MapManager(MapDataHelper mapData)
+        public MapManager(MapDataHelper mapData, Transform playerTransform)
         {
             _mapData = mapData;
+            _playerTransform = playerTransform;
             _pool = new ItemObjectPool();
         }
 
@@ -30,6 +38,8 @@ namespace Core.Map
         public void LoadStart()
         {
             _objectForChanges = Object.FindObjectsByType<ObjectForChangesState>(FindObjectsSortMode.None);
+            _lightsForTrigger = Object.FindObjectsByType<LightForTrigger>(FindObjectsSortMode.None).ToList();
+            _brokenDoor = Object.FindObjectOfType<BrokenDoor>();
         }
 
         void IMapManager.AddItemOnScene(ItemObjectType type, Vector3 position, Quaternion rotation)
@@ -46,7 +56,8 @@ namespace Core.Map
             return createdItem;
         }
 
-        public ItemObjectBase AddItemOnScene(int itemId, Vector3 position, Vector3 scale, Quaternion rotation, bool ignoreForRaise = false)
+        public ItemObjectBase AddItemOnScene(int itemId, Vector3 position, Vector3 scale, Quaternion rotation,
+            bool ignoreForRaise = false)
         {
             var data = _mapData.GetItemById(itemId);
             var createdItem = AddItemOnScene(data.ObjectType, position, rotation);
@@ -59,7 +70,34 @@ namespace Core.Map
             {
                 createdItem.Init(data, () => _pool.HideObject(createdItem));
             }
+
             return createdItem;
+        }
+
+        public LightForTrigger GetClosestLightToPlayer(float radius)
+        {
+            if (_lightsForTrigger.Count == 0)
+            {
+                return null;
+            }
+
+            LightForTrigger usedLight = null;
+            foreach (var light in _lightsForTrigger)
+            {
+                var selectedRadius = Vector3.Distance(light.transform.position, _playerTransform.position);
+                if (selectedRadius <= radius)
+                {
+                    usedLight = light;
+                    break;
+                }
+            }
+
+            if (usedLight != null)
+            {
+                _lightsForTrigger.Remove(usedLight);
+            }
+
+            return usedLight;
         }
 
         private void CreateItemsOnScene()
@@ -88,6 +126,11 @@ namespace Core.Map
         public ObjectForChangesState GetObjectForChanges(string nameObject)
         {
             return _objectForChanges?.FirstOrDefault(obj => obj.name == nameObject);
+        }
+
+        public void DestroyBlockTrigger()
+        {
+            _brokenDoor.DestroyDoor();
         }
 
         /// <summary>

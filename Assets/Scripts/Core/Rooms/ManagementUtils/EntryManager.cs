@@ -48,7 +48,7 @@ namespace Core.Rooms.ManagementUtils
         }
 
 #if UNITY_EDITOR
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
             if (_collider == null)
             {

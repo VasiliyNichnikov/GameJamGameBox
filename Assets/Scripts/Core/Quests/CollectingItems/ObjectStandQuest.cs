@@ -13,7 +13,26 @@ namespace Core.Quests.CollectingItems
 
         public override bool IsDisplayedHintAfterInput => true;
         public override bool IsQuestCompleted { get; protected set; }
-        
+
+        public override bool HasHint => true;
+        public override string Hint {
+            get
+            {
+                switch (RequiredItemType)
+                {
+                    case RequiredItemType.Dial:
+                        return "Где-то лежит стрелка!";
+                    case RequiredItemType.Pendulum:
+                        return "Тут должен быть маятник";
+                    case RequiredItemType.Bird:
+                        return "Домик для птички";
+                }
+
+                return string.Empty;
+            }
+        }
+
+
         private Action<RequiredItemType> _checkAfterAddItem;
         private int _neededItemId; 
         

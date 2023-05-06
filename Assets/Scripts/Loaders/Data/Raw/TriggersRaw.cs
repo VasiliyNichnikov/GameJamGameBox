@@ -6,10 +6,10 @@ namespace Loaders.Data.Raw
     {
         public int Id { get; set; }
         public string Type { get; set; }
-        public SoundExtension? SoundExtension { get; set; }
+        public LightTriggerExtension? LightTriggerExtension { get; set; }
     }
 
-    public struct TriggersData
+    public struct TriggersRaw
     {
         public List<Trigger> Triggers { get; set; }
     }

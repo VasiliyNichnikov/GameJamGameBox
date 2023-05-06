@@ -2,7 +2,6 @@
 using Core.Payer;
 using Core.SoundLogic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Core
 {

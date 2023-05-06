@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Loaders;
 using Loaders.Data.Ready;
 using UnityEngine;
@@ -8,10 +9,12 @@ namespace Core.Quests
     public class QuestManager : IQuestManager, ILoader
     {
         public event Action<int> OnStartPlotAfterCompletedQuest;
+        public event Action<int> OnQuestCompleted; 
 
 
         public void QuestCompleted(QuestData data)
         {
+            OnQuestCompleted?.Invoke(data.Id);
             OnStartPlotAfterCompletedQuest?.Invoke(data.PlotIdAfterComplete);
         }
 

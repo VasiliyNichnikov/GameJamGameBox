@@ -2,19 +2,17 @@
   "Triggers": [
     {
       "Id": 1,
-      "Type": "SoundAfterObjectRotationQuest",
-      "SoundExtension": {
-        "Sound": "dramatic-hit",
-        "Comment": "Звук толчка"
+      "Type": "OffLightManyTimes",
+      "LightTriggerExtension": {
+        "CompletedQuest": 3,
+        "MinimumDelaySeconds": 60,
+        "MaximumDelaySeconds": 120,
+        "MinimumDistanceToPlayer": 10
       }
     },
     {
       "Id": 2,
-      "Type": "MonsterAction"
-    },
-    {
-      "Id": 3,
-      "Type": "QuestCompleted"
+      "Type": "DestroyBlock"
     }
   ]
 }

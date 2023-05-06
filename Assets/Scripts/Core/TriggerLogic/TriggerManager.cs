@@ -1,8 +1,9 @@
-﻿using Loaders;
+﻿using System;
+using Loaders;
 
 namespace Core.TriggerLogic
 {
-    public class TriggerManager : ILoader
+    public class TriggerManager : ILoader, IDisposable
     {
         private readonly TriggerSystem _system;
 
@@ -28,6 +29,11 @@ namespace Core.TriggerLogic
         public void LoadStart()
         {
             // nothing
+        }
+
+        public void Dispose()
+        {
+            _system.Dispose();
         }
     }
 }

@@ -18,17 +18,18 @@ namespace DataHelpers
 
         public void Load()
         {
-            var data = StaticLoader.LoadData<TriggersData>(TriggersFile);
+            var data = StaticLoader.LoadData<TriggersRaw>(TriggersFile);
             
             foreach (var trigger in data.Triggers)
             {
                 var triggerData = new TriggerData(trigger.Id, trigger.Type.ConvertToEnum<TriggerType>());
-                if (trigger.SoundExtension != null)
+                if (trigger.LightTriggerExtension != null)
                 {
-                    var jsonMessage = ExtensionHelper.GetMessageForSoundExt(triggerData, trigger.SoundExtension.Value.Sound);
+                    var jsonMessage = ExtensionHelper.GetMessageForLightTrigger(triggerData, trigger.LightTriggerExtension.Value);
                     _triggers.Add(jsonMessage);
                     continue;
                 }
+                _triggers.Add(new JsonMessage<TriggerData>(triggerData, null));
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Core.TriggerLogic.Triggers;
 using Loaders;
 using Loaders.Data.Ready;
@@ -7,7 +8,7 @@ using Utils;
 
 namespace Core.TriggerLogic
 {
-    public class TriggerSystem
+    public class TriggerSystem : IDisposable
     {
         private readonly List<ITriggerListener> _triggers = new List<ITriggerListener>();
 
@@ -16,17 +17,14 @@ namespace Core.TriggerLogic
             var type = message.Data.Type;
 
             ITriggerListener trigger = null;
+            Debug.LogWarning($"Type: {type}");
             switch (type)
             {
-                case TriggerType.SoundAfterObjectRotationQuest:
-                    trigger = new SoundAfterObjectRotationQuestTrigger(system, message);
+                case TriggerType.OffLightManyTimes:
+                    trigger = new LightChangeTrigger(system, message);
                     break;
-
-                case TriggerType.MonsterAction:
-                    trigger = new MonsterActionTrigger(system, message);
-                    break;
-                case TriggerType.QuestCompleted:
-                    trigger = new QuestCompletedTrigger(system, message);
+                case TriggerType.DestroyBlock:
+                    trigger = new DestroyBlockTrigger();
                     break;
             }
 
@@ -69,7 +67,10 @@ namespace Core.TriggerLogic
                 if (trigger.IsTriggered)
                 {
                     trigger.ExecuteTrigger();
-                    completedTriggers.Enqueue(trigger);
+                    if (!trigger.ManyTimer)
+                    {
+                        completedTriggers.Enqueue(trigger);
+                    }
                 }
             }
 
@@ -81,7 +82,23 @@ namespace Core.TriggerLogic
             while (completedTriggers.Count > 0)
             {
                 var trigger = completedTriggers.Dequeue();
-                trigger.TriggerCompleted();
+                trigger.TriggerDestroy();
+                trigger.Dispose();
+                _triggers.Remove(trigger);
+            }
+        }
+
+        public void Dispose()
+        {
+            if (_triggers == null || _triggers.Count > 0)
+            {
+                return;
+            }
+
+            foreach (var trigger in _triggers)
+            {
+                
+                trigger.Dispose();
             }
         }
     }

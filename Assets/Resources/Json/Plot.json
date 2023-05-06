@@ -2,6 +2,7 @@
   "Plot": [
     {
       "Id": 1,
+      "Comment": "Открытие холодильника",
       "Steps": [
         {
           "Type": "Sound",
@@ -26,36 +27,89 @@
           "Type": "CreateItem",
           "CreateItemExtension": {
             "ItemId": 6,
-            "Position": [3.043, 0.5608, 12.3928],
-            "Rotation": [-90, 0, 38.736],
-            "Scale": [5, 5, 5]
+            "Position": [
+              3.043,
+              0.5608,
+              12.3928
+            ],
+            "Rotation": [
+              -90,
+              0,
+              38.736
+            ],
+            "Scale": [
+              5,
+              5,
+              5
+            ]
           }
         },
         {
           "Type": "CreateItem",
           "CreateItemExtension": {
             "ItemId": 7,
-            "Position": [3.525, 0.449, 5.213],
-            "Rotation": [0, -13, 90],
-            "Scale": [0.45, 0.45, 0.45]
+            "Position": [
+              3.525,
+              0.449,
+              5.213
+            ],
+            "Rotation": [
+              0,
+              -13,
+              90
+            ],
+            "Scale": [
+              0.45,
+              0.45,
+              0.45
+            ]
+          }
+        },
+        {
+          "Type": "TextDialog",
+          "TextDialogExtension": {
+            "NamePerson": "Голос из холодильника:",
+            "MessagePerson": "Собери часы или тебе ..."
+          }
+        },
+        {
+          "Type": "TextDialog",
+          "TextDialogExtension": {
+            "NamePerson": "Олег:",
+            "MessagePerson": "Хм, о каких часах может идти речь"
           }
         }
       ]
     },
     {
       "Id": 2,
+      "Comment": "Пробуждение",
       "Steps": [
         {
           "Type": "TextDialog",
           "TextDialogExtension": {
-            "NamePerson": "Василий!",
-            "MessagePerson": "Вы прошли игру)"
+            "NamePerson": "Олег:",
+            "MessagePerson": "Побудка по часам, как в армии!"
+          }
+        },
+        {
+          "Type": "Timer",
+          "TimerExtension": {
+            "Timer": 1.5
+          }
+        },
+        {
+          "Type": "TextDialog",
+          "TextDialogExtension": {
+            "NamePerson": "Олег:",
+            "MessagePerson": "Пойду ему кантик отобью"
           }
         }
       ]
     },
     {
       "Id": 3,
+      "Comment": "Взятие фонарика",
       "Steps": [
         {
           "Type": "Sound",
@@ -88,6 +142,27 @@
             "NameDoor": "Door_AfterCollectedFlashlight",
             "NameAnimation": "OpenDoor"
           }
+        },
+        {
+          "Type": "TextDialog",
+          "TextDialogExtension": {
+            "NamePerson": "Олег",
+            "MessagePerson": "Начальник?"
+          }
+        },
+        {
+          "Type": "TextDialog",
+          "TextDialogExtension": {
+            "NamePerson": "Олег:",
+            "MessagePerson": "что за?..."
+          }
+        },
+        {
+          "Type": "TextDialog",
+          "TextDialogExtension": {
+            "NamePerson": "Олег:",
+            "MessagePerson": "Ладно, наверное, ветер"
+          }
         }
       ]
     },
@@ -105,12 +180,20 @@
     },
     {
       "Id": 5,
+      "Comment": "Попытка открытия главной двери",
       "Steps": [
         {
           "Type": "TextDialog",
           "TextDialogExtension": {
-            "NamePerson": "Василий!",
-            "MessagePerson": "Появление врага!"
+            "NamePerson": "Олег:",
+            "MessagePerson": "Так я вроде не запирал"
+          }
+        },
+        {
+          "Type": "TextDialog",
+          "TextDialogExtension": {
+            "NamePerson": "Олег:",
+            "MessagePerson": "Повезло вам, соседи, надо найти ключи!"
           }
         },
         {
@@ -139,6 +222,33 @@
           "OpenDoorExtension": {
             "NameDoor": "Door_AfterInputFrontDoor_Down",
             "NameAnimation": "OpenDoor"
+          }
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "Comment": "Попытка открытия главной двери",
+      "Steps": [
+        {
+          "Type": "TextDialog",
+          "TextDialogExtension": {
+            "NamePerson": "Олег:",
+            "MessagePerson": "Повезло вам, соседи, надо найти ключи!"
+          }
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "Comment": "Завершение игры",
+      "Steps": [
+        {
+          "Type": "TextDialog",
+          "TextDialogExtension": {
+            "NamePerson": "Разработчики:",
+            "MessagePerson": "Спасибо за прохождения игры!",
+            "ShowExitButton": true
           }
         }
       ]

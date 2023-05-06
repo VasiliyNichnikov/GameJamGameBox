@@ -39,7 +39,7 @@ namespace DataHelpers
                         var textDialog = step.TextDialogExtension.Value;
                         var jsonMessage =
                             ExtensionHelper.GetMessageForTextDialogExt(stepData, textDialog.NamePerson,
-                                textDialog.MessagePerson);
+                                textDialog.MessagePerson, textDialog.ShowExitButton);
                         allStepsData.Add(jsonMessage);
                         continue;
                     }
