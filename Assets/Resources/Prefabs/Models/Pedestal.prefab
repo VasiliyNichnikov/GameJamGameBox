@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9177981235941354946}
   - component: {fileID: 5256095334617260647}
   - component: {fileID: 8004463969901467309}
+  - component: {fileID: 9223076665132238427}
   m_Layer: 0
   m_Name: Pedestal
   m_TagString: Untagged
@@ -84,3 +85,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9223076665132238427
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8364712700370777976}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6781532, y: 0.67815316, z: 0.6354329}
+  m_Center: {x: 0, y: 0, z: -0.06289251}

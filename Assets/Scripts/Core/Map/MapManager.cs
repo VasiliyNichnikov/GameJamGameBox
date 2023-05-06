@@ -98,7 +98,7 @@ namespace Core.Map
             var doors = Main.Instance.Data.DoorHelper.Doors;
             foreach (var doorData in doors)
             {
-                if (doorData.Data.DoorType == DoorType.Quest)
+                if (doorData.Data.DoorType != DoorType.Key)
                 {
                     // Пока не инитим квесты
                     continue;

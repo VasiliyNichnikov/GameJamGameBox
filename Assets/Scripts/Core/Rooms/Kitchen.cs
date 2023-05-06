@@ -8,8 +8,7 @@ namespace Core.Rooms
     {
         public override RoomType Type => RoomType.Kitchen;
         public override ISoundRoom SoundRoom => _kitchenSound;
-
-        public bool PlayerInRoom { get; private set; }
+        
         [SerializeField] private KitchenSound _kitchenSound;
     }
 }
