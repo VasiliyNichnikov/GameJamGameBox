@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Core.UI.Quests
@@ -8,6 +9,8 @@ namespace Core.UI.Quests
         [SerializeField] private Text _namePerson;
         [SerializeField] private Text _messagePerson;
         [SerializeField] private Button _exitButton;
+
+        private const string NameMenuScene = "Menu";
         
         public void Init(string namePerson, string messagePerson, bool showExitButton)
         {
@@ -26,7 +29,7 @@ namespace Core.UI.Quests
 
         public void OnMenu()
         {
-            Debug.LogWarning("Go to menu");
+            SceneManager.LoadScene(NameMenuScene);
         }
     }
 }

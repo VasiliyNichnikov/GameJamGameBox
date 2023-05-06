@@ -1,4 +1,5 @@
 ﻿using System;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Core.Quests.RotationObjectsQuest
@@ -68,9 +69,9 @@ namespace Core.Quests.RotationObjectsQuest
 
         private void Turn()
         {
-            _numberOfTurns++;
             // плохой способ, но другим не смог решить
             _selectedObject.localRotation = Quaternion.Euler(_rotateAfterClick * _numberOfTurns);
+            // _selectedObject.transform.DORotate(_rotateAfterClick, 0.0f);
         }
     }
 }

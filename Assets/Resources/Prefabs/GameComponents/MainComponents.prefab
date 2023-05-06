@@ -520,6 +520,11 @@ PrefabInstance:
       propertyPath: m_ShapeRadius
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4217327308383623432, guid: 46f3b4bc34cbedc45a1968936a0a5037,
+        type: 3}
+      propertyPath: antialiasing
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5382323511499257097, guid: 46f3b4bc34cbedc45a1968936a0a5037,
         type: 3}
       propertyPath: m_Intensity
