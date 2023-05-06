@@ -1,0 +1,14 @@
+{
+  "BackgroundSettings": {
+    "InRoom": {
+      "Duration": 1.5,
+      "Volume": -40,
+      "Comment": "Время затухания после перехода в комнату (Volume = -80 - 0)"
+    },
+    "OutRoom": {
+      "Duration": 1.5,
+      "Volume": 0,
+      "Comment": "Время появления звука после выхода из комнаты"
+    }
+  }
+}

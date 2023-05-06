@@ -10,11 +10,14 @@ namespace Core.SoundLogic.AtmosphericSounds
         [SerializeField] private AudioSource _sourceSink;
         [SerializeField, Range(-3f, 3f)] private float _minPitch;
         [SerializeField, Range(-3f, 3f)] private float _maxPitch;
-
+        
+        public bool IsIgnoreOffAmbiences => false;
+        
+        private IEnumerator _currentSoundOfDrops;
 
         private void Start()
         {
-            StartCoroutine(TryStartSound());
+            _currentSoundOfDrops = TryStartSound();
         }
 
         // todo желательно звук стопить когда игрок далеко от комнаты
@@ -31,7 +34,29 @@ namespace Core.SoundLogic.AtmosphericSounds
                 yield return null;
             }
         }
-        
+
+        public void StartBackground()
+        {
+            if (_currentSoundOfDrops == null)
+            {
+                Debug.LogError("CurrentSound of drops is null");
+                return;
+            }
+            
+            StartCoroutine(_currentSoundOfDrops);
+        }
+
+        public void EndBackground()
+        {
+            if (_currentSoundOfDrops == null)
+            {
+                Debug.LogError("CurrentSound of drops is null");
+                return;
+            }
+
+            StopCoroutine(_currentSoundOfDrops);
+        }
+
         [CanBeNull]
         private AudioClip PlaySoundOfDrops()
         {

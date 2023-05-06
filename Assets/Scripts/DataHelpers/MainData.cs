@@ -9,6 +9,7 @@ namespace DataHelpers
         public TriggerDataHelper TriggerHelper { get; }
         public PlotDataHelper PlotHelper { get; }
         public DoorsDataHelper DoorHelper { get; }
+        public SoundSettingsDataHelper SoundDataHelper { get; }
 
         public MainData()
         {
@@ -17,6 +18,7 @@ namespace DataHelpers
             TriggerHelper = new TriggerDataHelper();
             PlotHelper = new PlotDataHelper();
             DoorHelper = new DoorsDataHelper();
+            SoundDataHelper = new SoundSettingsDataHelper();
         }
 
         public void LoadAwake()
@@ -26,6 +28,7 @@ namespace DataHelpers
             TriggerHelper.Load();
             PlotHelper.Load();
             DoorHelper.Load();
+            SoundDataHelper.Load();
         }
 
         public void LoadStart()

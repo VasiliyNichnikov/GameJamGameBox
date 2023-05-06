@@ -8,7 +8,6 @@ namespace Core.Inventory.Item
     public abstract class ItemObjectBase : MonoBehaviour, IDisposable, IPoolObject
     {
         public string InfoAboutItem { get; private set; }
-        
         protected ItemData Data;
         protected Action OnTakeAction;
 
@@ -72,6 +71,11 @@ namespace Core.Inventory.Item
             }
 
             return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Data.Id.GetHashCode();
         }
     }
 }

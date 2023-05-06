@@ -4,11 +4,13 @@ using Core.Inventory;
 using Core.Map;
 using Core.PlotLogic;
 using Core.Quests;
+using Core.Rooms;
 using Core.SoundLogic;
 using Core.TriggerLogic;
 using Core.UI;
 using DataHelpers;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Core
 {
@@ -31,6 +33,7 @@ namespace Core
         public QuestsStorage QuestsStorage => _questsStorage;
         public IInputHandler InputHandler => _inputHandler;
         public DoorStorage DoorStorage => _doorStorage;
+        public IBackgroundSoundManager SoundManager => _soundManager;
 
         [SerializeField] private ItemStorage _itemStoragePrefab;
         [SerializeField] private SpriteStorage _spriteStoragePrefab;
@@ -39,6 +42,9 @@ namespace Core
         [SerializeField] private DialogManager _dialogManager;
         [SerializeField] private InputHandler _inputHandler;
         [SerializeField] private DoorStorage _doorStorage;
+        [SerializeField] private AudioMixerGroup _mixerGroup;
+        [SerializeField] private HouseSystem _houseSystem;
+
 
         [Space(10)] [SerializeField] private ItemFactory _itemFactory;
         private ItemStorage _itemStorage;
@@ -48,6 +54,7 @@ namespace Core
         private TriggerManager _triggerManager;
         private QuestManager _questManager;
         private PlotManager _plotManager;
+        private BackgroundSoundManager _soundManager;
 
         public void Awake()
         {
@@ -90,6 +97,10 @@ namespace Core
 
             // Создание кнопки E
             _dialogManager.ShowDialog<HintCollectorView>();
+            
+            // Управляющий звуками
+            _soundManager = new BackgroundSoundManager(_mixerGroup, Data.SoundDataHelper.BackgroundSettings);
+            _houseSystem.Init(_soundManager);
         }
 
         private void OnDestroy()
