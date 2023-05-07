@@ -70,8 +70,8 @@ namespace Core.Quests.RotationObjectsQuest
         private void Turn()
         {
             // плохой способ, но другим не смог решить
+            _numberOfTurns++;
             _selectedObject.localRotation = Quaternion.Euler(_rotateAfterClick * _numberOfTurns);
-            // _selectedObject.transform.DORotate(_rotateAfterClick, 0.0f);
         }
     }
 }
