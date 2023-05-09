@@ -25,7 +25,7 @@ namespace Core.Map
         {
             if (_door != null)
             {
-                _door.Open();
+                _door.Open(false);
             }
         }
     }

@@ -1,28 +1,33 @@
 ﻿using System.Collections;
+using Core.Payer;
 using Core.Pool;
 using UnityEngine;
 
 namespace Core.SoundLogic
 {
+    /// <summary>
+    /// todo нужно вынести в отдельный компонент от игрока
+    /// </summary>
     public class PlayerSound : MonoBehaviour, IPlayerSound
     {
         [SerializeField] private Transform _soundParent;
         [SerializeField] private AudioClip[] _footSteps;
-        
+
         [Space]
         [SerializeField] private AudioSource[] _ambiencesSource;
         [SerializeField, Header("За сколько секунд до конца будем менять звуки"), Range(0, 5)] 
         private float _transitionTime;
-        
+
+        private PlayerNoiseCatcher _playerNoiseCatcher;
         private SoundItem _footStepSound;
         private SoundPool _pool;
 
         private void Start()
         {
+            _playerNoiseCatcher = new PlayerNoiseCatcher();
             _pool = new SoundPool(_soundParent);
 
             InitFootSteps();
-
             StartCoroutine(StartAmbiences());
         }
 
@@ -72,6 +77,11 @@ namespace Core.SoundLogic
                 _ambiencesSource[randomId].Play();
                 yield return new WaitForSeconds(_ambiencesSource[randomId].clip.length - _transitionTime);
             }
+        }
+
+        public void MakeSound(float noiseVolume)
+        {
+            _playerNoiseCatcher.MakeSound(noiseVolume);
         }
     }
 }

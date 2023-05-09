@@ -12,6 +12,7 @@ namespace Loaders.DataRaw
         public string Title;
         public string Description;
         public string NameIcon;
+        public float NoisyVolume;
         public bool AddToHand;
         [CanBeNull] public List<float> Position;
         [CanBeNull] public List<float> Rotation;

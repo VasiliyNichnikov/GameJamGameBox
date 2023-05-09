@@ -6,6 +6,7 @@
       "Title": "Фонарь",
       "Description": "Я твой фонарь!",
       "NameIcon": "flashlightIcon",
+      "NoisyVolume": 0.001,
       "AddToHand": true,
       "Position": [1.56, 0.55, -9.65],
       "Rotation": [0, 180, 0]
@@ -16,6 +17,7 @@
       "Title": "Ключ от кухни",
       "Description": "Дверь где-то в доме!",
       "NameIcon": "keyIcon",
+      "NoisyVolume": 0.3,
       "Position": [-2.666, 0.328, 3.816],
       "Rotation": [0, 0, 90]
     },
@@ -23,12 +25,14 @@
       "Id": 6,
       "Type": "HourHand",
       "Title": "Часовая стрелка",
+      "NoisyVolume": 0.65,
       "Description": "Нужно вставить в часы!",
       "NameIcon": "hourHandIcon"
     },
     {
       "Id": 7,
       "Type": "Key",
+      "NoisyVolume": 0.5,
       "Title": "Ключ от кладовки",
       "Description": "Хм, что там?)",
       "NameIcon": "keyIcon"
@@ -37,6 +41,7 @@
       "Id": 8,
       "Type": "Pendulum",
       "Title": "Маятник",
+      "NoisyVolume": 0.79,
       "Description": "Поможет выбраться из ада",
       "NameIcon": "pendulumIcon"
     },
@@ -44,6 +49,7 @@
       "Id": 9,
       "Type": "Bird",
       "Title": "Птица победы",
+      "NoisyVolume": 0.99,
       "Description": "Скоро кошмар закончится или нет)",
       "NameIcon": "birdIcon",
       "Position": [17.6851, 0.1255, 1.7381],

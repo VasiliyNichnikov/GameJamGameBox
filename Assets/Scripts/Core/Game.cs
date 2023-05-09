@@ -1,4 +1,5 @@
 ﻿using Core.Inventory;
+using Core.Monster;
 using Core.Payer;
 using Core.SoundLogic;
 using UnityEngine;
@@ -18,11 +19,14 @@ namespace Core
         [SerializeField] private ItemsInPlayerHandManager _itemsInPlayerHandManager;
         [SerializeField] private InventoryManager _inventoryManager;
         [SerializeField] private PlayerSound _playerSound;
+        [SerializeField] private MonsterBrain _monsterBrain;
+        [SerializeField] private Transform _playerTransform;
         
         private void Awake()
         {
             Instance = this;
             _itemsInPlayerHandManager.Init(_inventoryManager);
+            _monsterBrain.Init(_playerTransform);
             
             // Выключаем курсор
             Cursor.visible = false;

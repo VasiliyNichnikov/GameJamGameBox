@@ -1,11 +1,12 @@
 ﻿using System;
+using Core.Payer;
 using Core.Pool;
 using Loaders.Data.Ready;
 using UnityEngine;
 
 namespace Core.Inventory.Item
 {
-    public abstract class ItemObjectBase : MonoBehaviour, IDisposable, IPoolObject
+    public abstract class ItemObjectBase : MonoBehaviour, IDisposable, IPoolObject, INoisyObject
     {
         public string InfoAboutItem { get; private set; }
         protected ItemData Data;
@@ -50,6 +51,7 @@ namespace Core.Inventory.Item
         public virtual void ToTake()
         {
             OnTakeAction?.Invoke();
+            MakeSound(Data.NoisyVolume);
             Game.Instance.InventoryManager.AddItemInInventory(Data);
         }
 
@@ -76,6 +78,11 @@ namespace Core.Inventory.Item
         public override int GetHashCode()
         {
             return Data.Id.GetHashCode();
+        }
+
+        public void MakeSound(float noiseVolume)
+        {
+            Game.Instance.PlayerSound.MakeSound(noiseVolume);
         }
     }
 }

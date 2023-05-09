@@ -1,6 +1,7 @@
 using Core.Doors;
 using Core.SoundLogic.AtmosphericSounds;
 using DG.Tweening;
+using Loaders.Data.Raw;
 using Loaders.Data.Ready;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -12,6 +13,7 @@ namespace Core.SoundLogic
         #region MixerValues
 
         private const string BackgroundHallValue = "BackgroundHallValue";
+        private const string BackgroundEnemyAmbienceValue = "BackgroundEnemyAmbienceValue";
 
         #endregion
 
@@ -27,19 +29,25 @@ namespace Core.SoundLogic
 
         public void MeetingWithEnemy()
         {
+            // todo говнокод
             // Будем менять дорожку в миксере
             // Включать звук сердца на фоне
             // Проигрывать громкие звуки
+            // todo перенести все в настройки звука
+            _mixer.audioMixer.DOSetFloat(BackgroundEnemyAmbienceValue, 0, 5.5f);
         }
 
         public void EscapeFromEnemy()
         {
             // Уход от врага сопровождается тишиной
             // Пока игрок не зайдет к комнату
+            // todo перенести все в настройки звука
+            _mixer.audioMixer.DOSetFloat(BackgroundEnemyAmbienceValue, -80, 2.5f);
         }
         
         public void EntranceToRoom(ISoundRoom roomSound)
         {
+            // todo подумать над выключением звуков при встрече с монстром
             if (roomSound == null || !roomSound.IsIgnoreOffAmbiences)
             {
                 ChangeVolumeAudio(BackgroundHallValue, _data.InRoom);
@@ -50,6 +58,7 @@ namespace Core.SoundLogic
 
         public void ExitFromRoomToHall(ISoundRoom roomSound)
         {
+            // todo подумать над выключением звуков при встрече с монстром
             if (roomSound == null || !roomSound.IsIgnoreOffAmbiences)
             {
                 ChangeVolumeAudio(BackgroundHallValue, _data.OutRoom);

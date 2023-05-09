@@ -7,7 +7,7 @@ namespace Core.Doors
 
         public override void Input()
         {
-            ChangeStateDoor();
+            ChangeStateDoor(true);
         }
     }
 }

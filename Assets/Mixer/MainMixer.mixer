@@ -136,6 +136,8 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: ad919f0ee49f8b247ac4e4a604c32aed
     name: BackgroundHallValue
+  - guid: 87a52e73518abc547bfe9aef120d8d74
+    name: BackgroundEnemyAmbienceValue
   m_AudioMixerGroupViews:
   - guids:
     - 62556725df6f1dd449c16c109a050f6d
@@ -200,6 +202,7 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: c86adcc5d3102994d969a6da4cb1db70
   m_FloatValues:
+    87a52e73518abc547bfe9aef120d8d74: -80
     b03397fa0b48fa340928f39bce223386: -18.3
     ad919f0ee49f8b247ac4e4a604c32aed: -80
   m_TransitionOverrides: {}

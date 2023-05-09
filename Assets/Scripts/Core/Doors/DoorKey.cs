@@ -36,7 +36,7 @@ namespace Core.Doors
             
             if (_isThereKey)
             {
-                ChangeStateDoor();
+                ChangeStateDoor(true);
             }
         }
     }

@@ -11,6 +11,7 @@ namespace Loaders.Data.Ready
         public readonly int Id;
         public readonly ItemObjectType ObjectType;
         public readonly ItemViewType ViewType;
+        public readonly float NoisyVolume;
         public readonly string Title;
         public readonly string Description;
         public readonly string NameIcon;
@@ -26,6 +27,7 @@ namespace Loaders.Data.Ready
             NameIcon = rawItem.NameIcon;
             AddToHand = rawItem.AddToHand;
             ObjectType = rawItem.Type.ConvertToEnum<ItemObjectType>();
+            NoisyVolume = rawItem.NoisyVolume;
             ViewType = ItemViewType.Default;
             if (rawItem.Position == null)
             {
