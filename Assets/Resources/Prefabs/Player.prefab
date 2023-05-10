@@ -67,7 +67,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 5431
+    m_Bits: 13623
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1112,6 +1112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _walk: {fileID: 8080895867132611288}
+  _noiseyVolume: 0
 --- !u!114 &8080895867132611288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1644,7 +1645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7482089233630013388}
   - component: {fileID: 5391780139973943812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}

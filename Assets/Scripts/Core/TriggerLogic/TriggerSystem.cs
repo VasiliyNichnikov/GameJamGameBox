@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Core.TriggerLogic.Triggers;
-using Loaders;
 using Loaders.Data.Ready;
 using UnityEngine;
 using Utils;
@@ -17,7 +16,6 @@ namespace Core.TriggerLogic
             var type = message.Data.Type;
 
             ITriggerListener trigger = null;
-            Debug.LogWarning($"Type: {type}");
             switch (type)
             {
                 case TriggerType.OffLightManyTimes:

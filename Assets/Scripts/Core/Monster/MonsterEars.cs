@@ -10,10 +10,11 @@ namespace Core.Monster
     /// </summary>
     public class MonsterEars : MonoBehaviour, IMonsterEars, IDisposable
     {
-        public Vector3 LoudestPoint => _loudestPoint;
+        public Vector3 LoudestPoint => _loudestPoint ?? Vector3.zero;
+
         public IReadOnlyCollection<MonsterPoint> Points => _points;
         public float HearingDistance => _hearingDistance;
-        public bool GetSoundDetected() => _soundDetected;
+        
         private List<MonsterPoint> _points = new List<MonsterPoint>();
 
         [SerializeField] private Transform _bodyMonster;
@@ -22,10 +23,8 @@ namespace Core.Monster
         private float _hearingDistance;
 
         [SerializeField] private Color _color = new Color(1, 0, 0.25f);
-
-        private bool _soundDetected;
         
-        private Vector3 _loudestPoint;
+        private Vector3? _loudestPoint;
 
         public void Init(List<MonsterPoint> points)
         {
@@ -35,9 +34,7 @@ namespace Core.Monster
 
         public bool SoundDetected()
         {
-            var temp = _soundDetected;
-            _soundDetected = false;
-            return temp;
+            return _loudestPoint != null;
         }
         
         /// <summary>
@@ -45,15 +42,20 @@ namespace Core.Monster
         /// </summary>
         private void CatchPlayerNoise(float noiseDistance)
         {
+            var soundDetected = false;
             foreach (var point in _points)
             {
-                _soundDetected |= point.TryUpdateWeight(noiseDistance);
+                soundDetected |= point.TryUpdateWeight(noiseDistance);
             }
 
-            if (_soundDetected)
+            if (soundDetected)
             {
                 _points.Sort(MonsterPoint.SortByWeight);
                 _loudestPoint = _points[0].Position;
+            }
+            else
+            {
+                _loudestPoint = null;
             }
         }
 

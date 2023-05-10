@@ -8,15 +8,15 @@ namespace Core.Monster.StateMachine
         public bool IsInitialized { get; private set; }
         
         
-        public MonsterStateMachine InitWalkState(IMonsterWalking walking, IMonsterEars ears)
+        public MonsterStateMachine InitWalkState(IMonsterWalking walking, IMonsterEars ears, IMonsterEyes eyes)
         {
-            WalkingState = new MonsterWalkState(this, walking, ears);
+            WalkingState = new MonsterWalkState(this, walking, ears, eyes);
             return this;
         }
 
-        public MonsterStateMachine InitRunState(IMonsterWalking walking, IMonsterEars ears)
+        public MonsterStateMachine InitRunState(IMonsterWalking walking, IMonsterEyes eyes)
         {
-            RunState = new MonsterRunState(this, walking, ears);
+            RunState = new MonsterRunState(this, walking, eyes);
             return this;
         }
 

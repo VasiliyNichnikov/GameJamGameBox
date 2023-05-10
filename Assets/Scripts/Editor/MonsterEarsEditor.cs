@@ -28,7 +28,7 @@ namespace Editor
                 return;
             }
 
-            EditorGUILayout.LabelField("Is sound detected", $": {_monsterEars.GetSoundDetected()}");
+            EditorGUILayout.LabelField("Is sound detected", $": {_monsterEars.SoundDetected()}");
             _noiseVolume = EditorGUILayout.FloatField("Noise volume", _noiseVolume);
             _selectedPoint = EditorGUILayout.IntSlider("Selected point", _selectedPoint, 0, _monsterEars.Points.Count - 1);
 

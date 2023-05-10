@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core.Monster.StateMachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Core.Monster
@@ -9,6 +11,8 @@ namespace Core.Monster
     {
         [SerializeField] private MonsterWalking _legs;
         [SerializeField] private MonsterEars _ears;
+        [SerializeField] private MonsterEyes _eyes;
+
         [SerializeField] private Transform _parentPoints;
         [SerializeField] private SettingsWalkingLogic _settings;
 
@@ -46,11 +50,11 @@ namespace Core.Monster
             _playerTransform = player;
             
             _stateMachine = new MonsterStateMachine();
-            _stateMachine.InitWalkState(_legs, _ears).InitRunState(_legs, _ears).SetInitialized();
+            _stateMachine.InitWalkState(_legs, _ears, _eyes).InitRunState(_legs, _eyes).SetInitialized();
             _stateMachine.InitStartingState(_stateMachine.WalkingState);
             
             InitPoints();
-            _legs.Init(_playerTransform, _ears, _pointsForMovement);
+            _legs.Init(_playerTransform, _pointsForMovement);
             _ears.Init(_monsterPoints);
         }
 
@@ -63,6 +67,7 @@ namespace Core.Monster
             }
 
             _stateMachine.CurrentState.LogicUpdate();
+            _legs.Move();
         }
 
         private void InitPoints()
@@ -78,5 +83,24 @@ namespace Core.Monster
                 _monsterPoints.Add(readyPoint);
             }
         }
+
+#if UNITY_EDITOR
+        private void OnDrawGizmos()
+        {
+            if (_parentPoints == null || Application.isPlaying)
+            {
+                return;
+            }
+            
+            var children = _parentPoints.GetComponentsInChildren<Transform>().Where(t => t != transform).ToArray();
+
+            Gizmos.color = Color.cyan;
+            foreach (var pointTransform in children)
+            {
+                var position = pointTransform.position;
+                Gizmos.DrawSphere(position, 0.3f);
+            }
+        }
+#endif
     }
 }
