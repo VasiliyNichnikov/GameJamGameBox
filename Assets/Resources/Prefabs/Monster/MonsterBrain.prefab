@@ -1058,7 +1058,7 @@ MonoBehaviour:
   _speedSettings:
   - _speed: 1.5
     _type: 0
-  - _speed: 3
+  - _speed: 2
     _type: 1
   - _speed: 200
     _type: 2
