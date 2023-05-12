@@ -19,7 +19,7 @@ namespace Core.Quests.RotationObjectsQuest
         [SerializeField, Range(1, 100)] private int _numberRotation;
         [SerializeField] private CheckAxis _checkAxis;
 
-        private Quaternion _rightRotation;
+        private float _rightAngle;
         private int _numberOfTurns;
         private Action _onAfterTurnAction;
 
@@ -27,23 +27,18 @@ namespace Core.Quests.RotationObjectsQuest
         public bool IsRightTurn {
             get
             {
-                switch (_checkAxis)
+                var currentAngle = GetAngle(_selectedObject.localRotation.eulerAngles);
+                if (currentAngle > 180)
                 {
-                    case CheckAxis.X:
-                        return Math.Abs(_selectedObject.localRotation.x - _rightRotation.x) < 0.01f;
-                    case CheckAxis.Y:
-                        return Math.Abs(_selectedObject.localRotation.y - _rightRotation.y) < 0.01f;
-                    case CheckAxis.Z:
-                        return Math.Abs(_selectedObject.localRotation.z - _rightRotation.z) < 0.01f;
+                    currentAngle = 360 - currentAngle;
                 }
-
-                return false;
+                return Math.Abs(_rightAngle - currentAngle) < 0.01f;
             }
         }
 
         private void Awake()
         {
-            _rightRotation = Quaternion.Euler(_rotateAfterClick * _numberRotation);
+            _rightAngle = GetAngle(_rotateAfterClick) * _numberRotation;
         }
         
         public override bool IsDisplayedHintAfterInput => true;
@@ -69,9 +64,23 @@ namespace Core.Quests.RotationObjectsQuest
 
         private void Turn()
         {
-            // плохой способ, но другим не смог решить
-            _numberOfTurns++;
-            _selectedObject.localRotation = Quaternion.Euler(_rotateAfterClick * _numberOfTurns);
+            _selectedObject.Rotate(_rotateAfterClick);
+        }
+
+        private float GetAngle(Vector3 objectForRotation)
+        {
+            switch (_checkAxis)
+            {
+                case CheckAxis.X:
+                    return objectForRotation.x;
+                case CheckAxis.Y:
+                    return objectForRotation.y;
+                case CheckAxis.Z:
+                    return objectForRotation.z;
+            }
+
+            Debug.LogError($"Not corrected axis ({_checkAxis}");
+            return 0.0f;
         }
     }
 }
