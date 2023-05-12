@@ -42,7 +42,7 @@ namespace Core.Monster
         private Transform _playerTransform;
 
         private Vector3 _currentPointOfMovement;
-        
+
         private NavMeshPath _path;
         private Vector3 _destination;
         private Vector3 _agentPosition;
@@ -87,17 +87,19 @@ namespace Core.Monster
             {
                 return;
             }
-            
+
             _currentPointOfMovement = GetRandomPointForMovement();
             UpdatePath();
         }
 
         public void GoForSound(Vector3 loudestPoint)
         {
+#if UNITY_EDITOR
             if (_isDebugMode)
             {
                 return;
             }
+#endif
 
             Debug.LogWarning("GoForSound");
             _currentPointOfMovement = loudestPoint;
@@ -106,10 +108,12 @@ namespace Core.Monster
 
         public void RunAfterPlayer()
         {
+#if UNITY_EDITOR
             if (_isDebugMode)
             {
                 return;
             }
+#endif
 
             var playerPosition = _playerTransform.position;
             _currentPointOfMovement = playerPosition;
@@ -131,16 +135,19 @@ namespace Core.Monster
                 _destination = new Vector3(float.PositiveInfinity, float.PositiveInfinity, float.PositiveInfinity);
                 return;
             }
+
             _destination = _path.corners[_pathIteration];
 
             if (_destination.x < float.PositiveInfinity)
             {
                 var speedRotation = GetSpeedByType(SpeedType.Rotation);
                 var direction = _destination - _agentPosition;
-                
-                var newDirection = Vector3.RotateTowards(_bodyMonster.forward, direction, speedRotation * Time.deltaTime, 0.0f);
+
+                var newDirection = Vector3.RotateTowards(_bodyMonster.forward, direction,
+                    speedRotation * Time.deltaTime, 0.0f);
                 var newRotation = Quaternion.LookRotation(newDirection);
-                _bodyMonster.rotation = Quaternion.Slerp(_bodyMonster.rotation, newRotation, _agent.speed * Time.deltaTime * 2.0f);
+                _bodyMonster.rotation = Quaternion.Slerp(_bodyMonster.rotation, newRotation,
+                    _agent.speed * Time.deltaTime * 2.0f);
 
                 var distance = Vector3.Distance(_agentPosition, _destination);
                 if (distance > _agent.radius + OffsetRadius)
@@ -170,7 +177,7 @@ namespace Core.Monster
                 _agentPosition = hit.position;
             }
         }
-        
+
         private void UpdatePath()
         {
             _agent.CalculatePath(_currentPointOfMovement, _path);
@@ -229,7 +236,7 @@ namespace Core.Monster
 
             return result.ToArray();
         }*/
-        
+
 #if UNITY_EDITOR
         private void OnDrawGizmos()
         {
@@ -237,13 +244,14 @@ namespace Core.Monster
             {
                 DrawPoint(_pointsForMovement);
             }
-            
+
             Gizmos.color = Color.yellow;
-            if(_path != null && _path.corners.Length > 0)
+            if (_path != null && _path.corners.Length > 0)
             {
                 var previewPosition = _agentPosition;
-                for(int i = _pathIteration; 
-                    i < _path.corners.Length; ++i)
+                for (int i = _pathIteration;
+                     i < _path.corners.Length;
+                     ++i)
                 {
                     Gizmos.DrawLine(previewPosition, _path.corners[i]);
                     previewPosition = _path.corners[i];
