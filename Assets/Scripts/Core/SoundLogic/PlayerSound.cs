@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Core.Payer;
 using Core.Pool;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Core.SoundLogic
 {
@@ -10,8 +12,15 @@ namespace Core.SoundLogic
     /// </summary>
     public class PlayerSound : MonoBehaviour, IPlayerSound
     {
+        public enum StepType
+        {
+            Walk,
+            Run
+        }
+        
         [SerializeField] private Transform _soundParent;
         [SerializeField] private AudioClip[] _footSteps;
+        [SerializeField] private AudioClip[] _runSteps;
 
         [Space]
         [SerializeField] private AudioSource[] _ambiencesSource;
@@ -46,14 +55,30 @@ namespace Core.SoundLogic
             sound.Play(clip);
         }
 
-        public void PlayStep()
+        public void PlayStep(StepType stepType)
         {
             if (_footStepSound.IsPlaying)
             {
                 return;
             }
 
-            var clip = _footSteps[Random.Range(0, _footSteps.Length)];
+            AudioClip clip = null;
+            switch (stepType)
+            {
+                case StepType.Walk:
+                    clip = _footSteps[Random.Range(0, _footSteps.Length)];
+                    break;
+                case StepType.Run:
+                    clip = _runSteps[Random.Range(0, _runSteps.Length)];
+                    break;
+            }
+
+            if (clip == null)
+            {
+                Debug.LogError($"Not found clip with type: {stepType}");
+                return;
+            }
+            
             _footStepSound.Play(clip);
         }
 

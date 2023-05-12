@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Core.Payer.Movement
 {
@@ -12,6 +11,9 @@ namespace Core.Payer.Movement
         private Vector3 _directionWalk;
         private Vector3 _cameraViewingAngle;
 
+        private const KeyCode RightShift = KeyCode.RightShift;
+        private const KeyCode LeftShift = KeyCode.LeftShift;
+        
         public static bool IsMovement { get; private set; }
 
         private void Start()
@@ -36,7 +38,15 @@ namespace Core.Payer.Movement
                 return;
             }
 
-            Game.Instance.PlayerSound.PlayStep();
+            if (Input.GetKey(RightShift) || Input.GetKey(LeftShift))
+            {
+                _walk.SetRunSpeed();
+            }
+            else
+            {
+                _walk.SetWalkSpeed();
+            }
+            
             _directionWalk = new Vector3(deltaX, 0, deltaZ);
             _walk.Walking(_directionWalk);
             Game.Instance.PlayerSound.MakeSound(_noiseyVolume);

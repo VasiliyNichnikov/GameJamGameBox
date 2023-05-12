@@ -6,6 +6,6 @@ namespace Core.SoundLogic
     public interface IPlayerSound : INoisyObject
     {
         void PlayEffect(AudioClip clip);
-        void PlayStep();
+        void PlayStep(PlayerSound.StepType stepType);
     }
 }
