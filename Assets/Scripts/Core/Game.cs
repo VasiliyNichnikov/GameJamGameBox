@@ -26,10 +26,15 @@ namespace Core
         {
             Instance = this;
             _itemsInPlayerHandManager.Init(_inventoryManager);
-            _monsterBrain.Init(_playerTransform);
-            
+
             // Выключаем курсор
             Cursor.visible = false;
+        }
+
+        // Если код усложнится, надо будет вынести в отдельный класс
+        public void StartMonster()
+        {
+            _monsterBrain.Init(_playerTransform);
         }
     }
 }

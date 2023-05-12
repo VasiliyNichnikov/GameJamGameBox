@@ -9,6 +9,7 @@
         Livingroom,
         Storage,
         Kitchen,
-        Bathroom
+        Bathroom,
+        Hall
     }
 }

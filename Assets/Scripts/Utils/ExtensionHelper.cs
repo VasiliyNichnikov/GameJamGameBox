@@ -86,5 +86,13 @@ namespace Utils
             var jsonMessage = new JsonMessage<T>(data, extension);
             return jsonMessage;
         }
+
+        public static JsonMessage<T> GetMessageForActionMonster<T>(T data, ActionMonsterExtension extensionRaw)
+            where T : struct
+        {
+            var extension = new ActionMonsterExtensionData(extensionRaw);
+            var jsonMessage = new JsonMessage<T>(data, extension);
+            return jsonMessage;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Core.Monster;
 using Core.Quests.CollectingItems;
 using Extensions;
 using Loaders.Data.Raw;
@@ -147,6 +148,16 @@ namespace Loaders.Data.Ready
             MinimumDelaySeconds = extensionRaw.MinimumDelaySeconds;
             MaximumDelaySeconds = extensionRaw.MaximumDelaySeconds;
             MinimumDistanceToPlayer = extensionRaw.MinimumDistanceToPlayer;
+        }
+    }
+
+    public struct ActionMonsterExtensionData
+    {
+        public readonly ActionMonsterType Type;
+
+        public ActionMonsterExtensionData(ActionMonsterExtension extensionRaw)
+        {
+            Type = extensionRaw.Type.ConvertToEnum<ActionMonsterType>();
         }
     }
 }

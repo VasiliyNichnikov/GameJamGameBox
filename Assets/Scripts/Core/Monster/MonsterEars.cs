@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Core.Payer;
 using UnityEngine;
 
@@ -26,9 +27,9 @@ namespace Core.Monster
         
         private Vector3? _loudestPoint;
 
-        public void Init(List<MonsterPoint> points)
+        public void Init(IEnumerable<MonsterPoint> points)
         {
-            _points = points;
+            _points = points.ToList();
             PlayerNoiseCatcher.OnMakingSound += CatchPlayerNoise;
         }
 

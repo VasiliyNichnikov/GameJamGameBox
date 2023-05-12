@@ -72,4 +72,9 @@ namespace Loaders.Data.Raw
         public float MaximumDelaySeconds { get; set; }
         public float MinimumDistanceToPlayer { get; set; }
     }
+    
+    public struct ActionMonsterExtension
+    {
+        public string Type { get; set; }
+    }
 }

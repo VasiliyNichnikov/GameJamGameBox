@@ -223,6 +223,12 @@
             "NameDoor": "Door_AfterInputFrontDoor_Down",
             "NameAnimation": "OpenDoor"
           }
+        },
+        {
+          "Type": "ActionMonster",
+          "ActionMonsterExtension": {
+            "Type": "MonsterLauncher"
+          }
         }
       ]
     },

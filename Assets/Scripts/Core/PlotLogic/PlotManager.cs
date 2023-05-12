@@ -67,6 +67,9 @@ namespace Core.PlotLogic
                     case StepType.CreateItem:
                         action = new PlotCreateItem();
                         break;
+                    case StepType.ActionMonster:
+                        action = new PlotActionMonster();
+                        break;
                 }
 
                 if (action == null)

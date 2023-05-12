@@ -8,6 +8,7 @@
         Timer,
         ChangeStateObject,
         OpenDoor,
-        CreateItem
+        CreateItem,
+        ActionMonster
     }
 }

@@ -38,7 +38,7 @@ namespace Core.Monster
         [SerializeField] private Animator _animator;
         [SerializeField] private SpeedSettings[] _speedSettings;
 
-        private IReadOnlyList<Vector3> _pointsForMovement;
+        private IList<Vector3> _pointsForMovement;
         private Transform _playerTransform;
 
         private Vector3 _currentPointOfMovement;
@@ -67,7 +67,7 @@ namespace Core.Monster
             _agent.stoppingDistance = _minDistanceToPoint;
         }
 
-        public void Init(Transform playerTransform, IReadOnlyList<Vector3> pointsForMovement)
+        public void Init(Transform playerTransform, IList<Vector3> pointsForMovement)
         {
             _playerTransform = playerTransform;
             _pointsForMovement = pointsForMovement;
@@ -251,7 +251,7 @@ namespace Core.Monster
             }
         }
 
-        private void DrawPoint(IReadOnlyList<Vector3> points)
+        private void DrawPoint(IEnumerable<Vector3> points)
         {
             foreach (var point in points)
             {

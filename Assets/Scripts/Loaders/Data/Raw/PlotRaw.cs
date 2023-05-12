@@ -11,6 +11,7 @@ namespace Loaders.Data.Raw
         public ChangeStateObjectExtension? ChangeStateObjectExtension { get; set; }
         public OpenDoorExtension? OpenDoorExtension { get; set; }
         public CreateItemExtension? CreateItemExtension { get; set; }
+        public ActionMonsterExtension? ActionMonsterExtension { get; set; }
     }
 
     public struct Plot

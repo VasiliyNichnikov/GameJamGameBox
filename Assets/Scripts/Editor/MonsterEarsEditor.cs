@@ -45,7 +45,7 @@ namespace Editor
 
         private void OnSceneGUI()
         {
-            if (!Application.isPlaying)
+            if (!Application.isPlaying || _monsterEars.Points == null)
             {
                 return;
             }

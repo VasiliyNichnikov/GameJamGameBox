@@ -77,6 +77,14 @@ namespace DataHelpers
                         allStepsData.Add(jsonMessage);
                         continue;
                     }
+
+                    if (step.ActionMonsterExtension != null)
+                    {
+                        var extensionRaw = step.ActionMonsterExtension.Value;
+                        var jsonMessage = ExtensionHelper.GetMessageForActionMonster(stepData, extensionRaw);
+                        allStepsData.Add(jsonMessage);
+                        continue;
+                    }
                 }
 
                 var plotData = new PlotData(plot.Id, allStepsData);

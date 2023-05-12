@@ -1,30 +1,32 @@
 using System;
+using Core.Doors;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Core.Monster
 {
-    public class MonsterPoint : IComparable
+    public class MonsterPoint : MonoBehaviour, IComparable
     {
-        public Vector3 Position { get; }
+        [SerializeField] private RoomType Type;
+
+        public Vector3 Position => transform.position;
 
         public float Weight => _weight;
 
         private float _weight;
 
-        private readonly IMonsterMovementCalculator _movementCalculator;
-        private readonly IMonsterEars _ears;
-        private readonly float _minBeta;
-        private readonly float _maxBeta;
+        private IMonsterMovementCalculator _movementCalculator;
+        private IMonsterEars _ears;
+        private float _minBeta;
+        private float _maxBeta;
 
         private const float NoiseRatio = 1f;
 
-        public MonsterPoint(IMonsterMovementCalculator movementCalculator, IMonsterEars ears, Vector3 position, float minBeta, float maxBeta)
+        public void Init(IMonsterMovementCalculator movementCalculator, IMonsterEars ears, float minBeta, float maxBeta)
         {
-            Position = position;
             _movementCalculator = movementCalculator;
             _ears = ears;
-            
+
             _minBeta = minBeta;
             _maxBeta = maxBeta;
         }

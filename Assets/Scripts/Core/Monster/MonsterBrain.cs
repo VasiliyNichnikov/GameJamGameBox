@@ -15,30 +15,12 @@ namespace Core.Monster
 
         [SerializeField] private Transform _parentPoints;
         [SerializeField] private SettingsWalkingLogic _settings;
-
-        private List<Vector3> _pointsForMovement;
-        private List<MonsterPoint> _monsterPoints;
+        [SerializeField] private MonsterPoint[] _monsterPoints;
+        
         private MonsterStateMachine _stateMachine;
         private Transform _playerTransform;
 
-        private void Awake()
-        {
-            _pointsForMovement = new List<Vector3>();
-            var children = _parentPoints.GetComponentsInChildren<Transform>().Where(t => t != transform).ToArray();
-
-            foreach (var pointTransform in children)
-            {
-                var position = pointTransform.position;
-                _pointsForMovement.Add(new Vector3(position.x, 0.0f, position.z));
-            }
-#if !UNITY_EDITOR
-            foreach (var kid in children)
-            {
-                Destroy(kid.gameObject);
-            }
-#endif
-            Debug.LogWarning($"Points for movement: {_pointsForMovement.Count}");
-        }
+        private bool _isInitialized;
 
         /// <summary>
         /// Внимание:
@@ -47,19 +29,31 @@ namespace Core.Monster
         /// <param name="player"></param>
         public void Init(Transform player)
         {
+            if (_isInitialized)
+            {
+                return;
+            }
+            
             _playerTransform = player;
             
             _stateMachine = new MonsterStateMachine();
             _stateMachine.InitWalkState(_legs, _ears, _eyes).InitRunState(_legs, _eyes).SetInitialized();
             _stateMachine.InitStartingState(_stateMachine.WalkingState);
-            
+
             InitPoints();
-            _legs.Init(_playerTransform, _pointsForMovement);
+            _legs.Init(_playerTransform, _monsterPoints.Select(p => p.Position).AsReadOnlyList());
             _ears.Init(_monsterPoints);
+
+            _isInitialized = true;
         }
 
         public void Update()
         {
+            if (!_isInitialized)
+            {
+                return;
+            }
+            
             if (!_stateMachine.IsInitialized)
             {
                 Debug.LogWarning("Monster's state machine not initialized.");
@@ -72,15 +66,9 @@ namespace Core.Monster
 
         private void InitPoints()
         {
-            _monsterPoints = new List<MonsterPoint>();
-            foreach (var point in _pointsForMovement)
+            foreach (var point in _monsterPoints)
             {
-                var readyPoint = new MonsterPoint(_legs,
-                    _ears,
-                    point,
-                    _settings.MinBeta,
-                    _settings.MaxBeta);
-                _monsterPoints.Add(readyPoint);
+                point.Init(_legs, _ears, _settings.MinBeta, _settings.MaxBeta);
             }
         }
 
