@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Core.TriggerLogic.Triggers
 {
+    /// <summary>
+    /// todo переделать это гавно, нужно перенести в json
+    /// </summary>
     public class DestroyBlockTrigger : ITriggerListener
     {
         public bool ManyTimer => false;
@@ -9,7 +12,7 @@ namespace Core.TriggerLogic.Triggers
 
         private bool _isNeededQuestCompleted;
         // todo нужно перенести в json
-        private const int CompletedQuests = 4;
+        private const int CompletedQuests = 5;
         
         public void CheckTrigger()
         {
