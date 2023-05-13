@@ -1053,7 +1053,7 @@ MonoBehaviour:
   _bodyMonster: {fileID: 5023745202006231866}
   _agent: {fileID: 4773064473501691085}
   _minDistanceToPoint: 1.2
-  _minDistanceToPlayer: 1.2
+  _minDistanceToPlayer: 3
   _animator: {fileID: 1393795298267648320}
   _speedSettings:
   - _speed: 1.5
