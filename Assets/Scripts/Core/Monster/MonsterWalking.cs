@@ -52,7 +52,7 @@ namespace Core.Monster
         private static readonly int Speed = Animator.StringToHash("Speed");
 
         public bool IsMovement => !_agent.isStopped && _currentPointOfMovement != Vector3.zero;
-        public bool IsPlayerNearby => _agent.remainingDistance <= _minDistanceToPlayer;
+        public bool IsPlayerNearby => Vector3.Distance(_bodyMonster.position, _playerTransform.position) <= _minDistanceToPlayer;
 
         private void Awake()
         {

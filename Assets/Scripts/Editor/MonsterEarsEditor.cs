@@ -45,14 +45,14 @@ namespace Editor
 
         private void OnSceneGUI()
         {
-            if (!Application.isPlaying || _monsterEars.Points == null)
+            /*if (!Application.isPlaying || _monsterEars.Points == null || _monsterEars.Points.Count < _selectedPoint)
             {
                 return;
             }
 
             var point = _monsterEars.Points.ToArray()[_selectedPoint];
             Handles.PositionHandle(point.Position, Quaternion.identity);
-            Handles.Label(point.Position, point.Weight.ToString());
+            Handles.Label(point.Position, point.Weight.ToString());*/
         }
     }
 }

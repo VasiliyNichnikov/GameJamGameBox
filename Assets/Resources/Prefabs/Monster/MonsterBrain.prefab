@@ -1053,7 +1053,7 @@ MonoBehaviour:
   _bodyMonster: {fileID: 5023745202006231866}
   _agent: {fileID: 4773064473501691085}
   _minDistanceToPoint: 1.2
-  _minDistanceToPlayer: 0.5
+  _minDistanceToPlayer: 1.2
   _animator: {fileID: 1393795298267648320}
   _speedSettings:
   - _speed: 1.5
@@ -1075,7 +1075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bodyMonster: {fileID: 5023745202006231866}
-  _hearingDistance: 6
+  _hearingDistance: 10
   _color: {r: 0.6652983, g: 0.7075472, b: 0.21693665, a: 0.1764706}
 --- !u!114 &1676255841134543929
 MonoBehaviour:
@@ -1091,10 +1091,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monsterBody: {fileID: 5023745202006231866}
   _visibilityAreaDirection: {fileID: 4130730539900854743}
-  _fow: 90
+  _fow: 50
   _rayCount: 100
-  _viewDistance: 10.4
-  _shiftY: 315
+  _viewDistance: 9
+  _shiftY: 300
   _playerMask:
     serializedVersion: 2
     m_Bits: 256
